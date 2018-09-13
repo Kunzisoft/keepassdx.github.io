@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="./img/favicon.ico" />
+    <title>KeePass DX</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/l10n.js"></script>
+    <link rel="prefetch" type="application/l10n" href="locales/locales.ini" />
+    <script type="text/javascript" src="./js/custom.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar">
+    <!-- Navigation -->
+    <nav class="navbar navbar-transparent navbar-fixed-top topnav">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="scrollTo" href="index.html"><img class="navbar-brand topnav" src="./img/logotype.png" alt="logotype" /></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="scrollTo" href="./contribution.html" data-l10n-id="contribute">Contribute</a>
+                    </li>
+                    <li>
+                        <a class="scrollTo" href="./index.html" data-l10n-id="download">Download</a>
+                    </li>
+                    <li>
+                        <a class="external-link" href="https://www.kunzisoft.com/">Kunzisoft</a>
+                    </li>
+                    <li>
+                      <div class="dropdown">
+                       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                         <span id="language-text">En</span>
+                         <span class="caret"></span>
+                       </button>
+                       <ul class="dropdown-menu" id="menu-language">
+                         <li><a href="#">Fr</a></li>
+                         <li><a href="#">En</a></li>
+                       </ul>
+                      </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+      <div>
+          <div class="container">
+            <div class="container row">
+              <div class="col-md-12">
+                <h1>F.A.Q.</h1>
+              </div>
+            </div>
+          </div>
+      </div>
+    </header>
+
+    <div id="faq_content" class="section-bg-light">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-sm-12">
+
+            <h2 data-l10n-id="">Why KeePass DX?</h2>
+                <p data-l10n-id="">KeePass DX is an <strong>Android app</strong> implemented from Keepass password manager.</p>
+                <p data-l10n-id="">KeePass DX was created to meet the security and usability needs of a KeePass application on Android :</p>
+                <ul>
+                    <li data-l10n-id="">To be easy to use with <strong>secure password management and form filling tools</strong>.</li>
+                    <li data-l10n-id="">To use only tools under <strong>open source license</strong> to guarantee the security of the application (With <a href="https://f-droid.org/en/">open source store</a> and no closed API).</li>
+                    <li data-l10n-id="">To be in a <strong>native langage</strong> (java) for weight, security and a better integration of the application.</li>
+                    <li data-l10n-id="">To respect <strong>Android design, architecture and ergonomic</strong>.</li>
+                </ul>
+
+           <h2 data-l10n-id="">What makes KeePass DX stand out from other password managers?</h2>
+            <ul>
+                <li data-l10n-id="">We <strong>do not recover your sensitive data</strong> on a private server or a closed cloud, you have control of your passwords.</li>
+                <li data-l10n-id="">We respect <strong>KeePass file standards</strong> to maintain compatibility and data porting on different devices (computers and portable devices with different operating system).</li>
+                <li data-l10n-id="">The code is <strong>open source</strong>, which implies increased <strong>security</strong>, you can check how the encryption algorithms are implemented.</li>
+                <li data-l10n-id="">We remain attentive to <strong>your needs</strong> and we can even integrate the features that you have defined.</li>
+                <li data-l10n-id="">We <strong>do not put advertising</strong> even in the free version.</li>
+            </ul>
+
+            <h2 data-l10n-id="">Can I open my database without my master key (master password and/or key file)?</h2>
+            <p data-l10n-id=""><strong>No</strong>, you can not open a database file without the master password (and / or) the associated key file. Be sure to remember your master password and save the key file in a safe place.</p>
+
+            <h2 data-l10n-id="">Can I open my database easily other than with a password?</h2>
+            <p data-l10n-id=""><strong>Yes</strong>, we have integrated a secure openning option of fingerprint for android devices that support this feature, so no one can access the application without scanning his/her fingerprint or fill a master key. <em>(You must always know your master password, the fingerprint is only a quick unlock tool.)</em></p>
+            
+
+            <h2 data-l10n-id="">How am I sure my passwords are safely stored on the application?</h2>
+            <p data-l10n-id="">We allow users to save and use passwords, keys and digital identities in a secure way by <strong>integrating the last encryption algorithms</strong> and <strong>Android architecture standards</strong>.</p>
+            <p data-l10n-id="">You can increase the security of your database by changing the encryption algorythm and increasing the rounds of encryption keys. <em>(In Settings -&gt; Database Settings when your database is open)</em> <strong>Warning</strong>: <em>Increase the number of rounds sparingly to have a reasonable opening time.</em></p>
+
+            <h2 data-l10n-id="">Why not an online version?</h2>
+            <p data-l10n-id="">The offline and online client concepts only exists with other apps because the file access network tools are directly integrated into the code of the main application. Which is a very dubious choice knowing that <strong>it is not normally the purpose of a password management application to take care of external file synchronization on clouds</strong> (which can be under closed licensed and recover your data base), it is rather the purpose of the <a href="https://developer.android.com/guide/topics/providers/document-provider">file management application</a>.</p>
+
+            <h2 data-l10n-id="">Can I store my data on a cloud storage?</h2>
+            <p data-l10n-id=""><strong>Yes</strong> this is possible. You can of course add the cloud application of your choice to your file manager (NextCloud, Owncloud, Dropbox, Google Drive...). We recommend using a cloud with personal server and open source license, like <a href="https://nextcloud.com/">NextCloud</a> to be sure how your databases are stored.</p>
+
+            <h2 data-l10n-id="">Can I recover my passwords on another device if I loose my main device?</h2>
+            <p data-l10n-id=""><strong>Yes</strong> you can, but you <strong>must first save the .kdb or .kdbx file from your database to an external storage</strong> <em>(like a hardrive or a cloud)</em>.
+We recommend you save your data after each modification so incase you loose your android device you could retrieve the data and import it into the new KeePass DX installed on the new android device. </p>
+
+            <h2 data-l10n-id="">Why are updates not available at the same time on all stores?</h2>
+            <ul>
+                <li data-l10n-id=""><strong>PlayStore</strong> only needs an APK generated and manually signed to be available on the store, it usually takes <strong>20 minutes</strong> to be available because it is deployed with fastlane. But the management of the APK and its data by the google servers is obscure.</li>
+                <li data-l10n-id=""><strong>F-Droid</strong>, to <strong>ensure that the code is open source</strong>, checks the sources directly on git repository (by checking the presence of new tags) and builds itself the APK that the server signs during the compilation of code and dependencies. Updating the project will take <strong>1-5 days</strong> for F-Droid to analyze all available repositories, build sources and deploy the generated APK. So F-Droid is slower for deployment but it is run by <strong>volunteers</strong> and guaranteed a <strong>clean APK</strong>. :)</li>
+            </ul>
+
+            <h2 data-l10n-id="">Why a <strong>Libre</strong>, <strong>Free</strong> and <strong>Pro</strong> version?</h2>
+            <p data-l10n-id="">All versions currently have the same usage features.</p>
+            <ul>
+                <li data-l10n-id=""><a href="https://www.f-droid.org/en/packages/com.kunzisoft.keepass.libre/"><strong>The Libre version</strong></a>, for paranoids <em>(so the recommended version)</em>, is the version provided by F-Droid, it is guaranteed without any proprietary code and is not linked to any closed service. The application is automatically signed and compiled from the github repository. It is possible to unlock the themes with a procedure.</li>
+                <li data-l10n-id=""><a href="https://play.google.com/store/apps/details?id=com.kunzisoft.keepass.free"><strong>The Free version</strong></a>, for everyday use, is the basic version of the Google Play Store. It is compiled and signed by the developers and sent to the Play Store to be cataloged by Google. It has the same features as other versions with alternative themes blocked.</li>
+                <li data-l10n-id=""><a href="https://play.google.com/store/apps/details?id=com.kunzisoft.keepass.pro"><strong>The Pro version</strong></a>, for people who want everything, is the unlocked version of the Google Play Store. It is currently available only to assist developments. It has unlocked themes and will have content to facilitate synchronizations to commonly used proprietary services.</li>
+            </ul>
+
+            <h2 data-l10n-id="">Why not give direct access to alternative themes?</h2>
+            <p>Alternative themes are present to encourage users to contribute. They might just not be there because they do not provide any usage feature but are rather cool and replace the advertisement.</p>
+            <p>The procedure to unlock these themes in KeePass Libre is sent by email manually so feel free to ask at <a href="mailto:contact@kunzisoft.com">contact@kunzisoft.com</a> if you have made a contribution.</p>
+
+            <h2 data-l10n-id="">Why KeePass DX is still in beta?</h2>
+            <p>Developments are not yet completed and basic features such as managing attachments and synchronization are not yet integrated.</p>
+
+            <h2 data-l10n-id="">Is an IOS version planned?</h2>
+            <p><strong>Yes</strong>, but only if the Android version is used by a majority of users and if there is a high demand.</p>
+
+            <h2 data-l10n-id="">Can I suggest features and report bugs for the application?</h2>
+            <p><strong>Yes</strong>, we welcome this you could go ahead and do that on our github:
+            <a href="https://github.com/Kunzisoft/KeePassDX/issues">https://github.com/Kunzisoft/KeePassDX/issues</a></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="section-bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <p class="copyright text-muted">
+                <span data-l10n-id="powered_by">Powered by</span><a href="https://www.kunzisoft.com"> Kunzisoft</a>
+            </p>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <p class="copyright text-muted">Copyright &copy; KeePass DX 2018. <span data-l10n-id="allRightsReserved">All rights reserved</span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

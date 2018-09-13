@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="./img/favicon.ico" />
+    <title>Kunzisoft</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/l10n.js"></script>
+    <link rel="prefetch" type="application/l10n" href="locales/locales.ini" />
+    <script type="text/javascript" src="./js/custom.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar">
+    <!-- Navigation -->
+    <nav class="navbar navbar-transparent navbar-fixed-top topnav">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html"><img class="navbar-brand topnav" src="./img/logotype.png" alt="logotype" /></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        
+                    </li>
+                    <li>
+                        <a class="scrollTo" href="#why" data-l10n-id="why">Pourquoi ?</a>
+                    </li>
+                    <li>
+                        <a class="scrollTo" href="#how" data-l10n-id="how">Comment ?</a>
+                    </li>
+                    <li>
+                      <div class="dropdown">
+                       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                         <span id="language-text">Fr</span>
+                         <span class="caret"></span>
+                       </button>
+                       <ul class="dropdown-menu" id="menu-language">
+                         <li><a href="#">Fr</a></li>
+                         <li><a href="#">En</a></li>
+                       </ul>
+                      </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="why" class="section section-bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">            
+            <h2><i class="fa fa-heart"></i></h2>
+            <p class="lead" data-l10n-id="why_description">Each contribution is used to create open source software.<br />KeePass DX is open, secure and respects your privacy thanks to you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="how" class="section section-bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <a href="#translation" type="button" class="scrollTo btn btn-success"><i class="fa fa-globe"></i> <span data-l10n-id="translation">Translation</span></a>
+              <a href="#feedback" type="button" class="scrollTo btn btn-default"><i class="fa fa-comment"></i> <span data-l10n-id="feedback">Feedback</span></a>
+              <a href="#donation" type="button" class="scrollTo btn btn-success"><i class="fa fa-coffee"></i> <span data-l10n-id="donation">Donation</span></a>
+              <a href="#share" type="button" class="scrollTo btn btn-default"><i class="fa fa-share"></i> <span data-l10n-id="share">Share</span></a>
+              <a href="#code" type="button" class="scrollTo btn btn-success"><i class="fa fa-code"></i> <span data-l10n-id="code">Code</span></a>
+              <a href="#mining" type="button" class="scrollTo btn btn-default"><i class="fa fa-desktop"></i> <span data-l10n-id="mining">Mining</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="how" class="section section-bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2><i class="fa fa-coffee"></i></h2>
+            <p class="lead" data-l10n-id="donation_description">A small donation makes all the difference, KeePass DX is created on the basis of voluntaria. So you allow regular updates and you increase the motivation of developers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="donation" class="section section-bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="tile">
+              <h3><i class="fa fa-paypal description-icon"></i>Paypal</h3>
+              <p class="lead" data-l10n-id="paypal_description">Paypal is a common way to pay in a secure way on the internet, it is the easiest solution for donations.</p>
+              <a class="btn btn-success" title="Donate Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KM6QMDAXZM3UU"><i class="fa fa-paypal"></i>Paypal</a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="tile">
+              <h3><i class="fa fa-credit-card description-icon"></i>Liberapay</h3>
+              <p class="lead" data-l10n-id="liberapay_description">Liberapay is a very elegant way to make regular donations, thus ensuring the sustainability of a project.</p>
+              <a class="btn btn-success" title="Donate Liberapay" href="https://liberapay.com/Kunzisoft/donate"><i class="fa fa-credit-card"></i>Liberapay</a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="tile">
+              <h3><i class="fa fa-bitcoin description-icon"></i><span data-l10n-id="cryptocurrency">Cryptocurrency</span></h3>
+              <p class="lead" data-l10n-id="cryptocurrency_description">The cryptocurrency is a consensus network that enables a new payment system and a completely digital money.</p>
+                <div class="btn btn-success" title="Donate Bitcoin" data-toggle="modal" data-target="#bitcoin">
+                    <img src="img/bitcoin.png" height="22" width="22" alt="Logo bitcoin"><br />Bitcoin</div>
+                <div class="btn btn-success" title="Donate Monero" data-toggle="modal" data-target="#monero">
+                    <img src="img/monero.png" height="22" width="22" alt="Logo monero"><br />Monero</div>
+                <div class="btn btn-success" title="Donate Litecoin" data-toggle="modal" data-target="#litecoin">
+                    <img src="img/litecoin.png" height="22" width="22" alt="Logo litecoin"><br />Litecoin</div>
+                <div class="btn btn-success" title="Donate Ethereum" data-toggle="modal" data-target="#ethereum">
+                    <img src="img/ethereum.png" height="22" width="22" alt="Logo ethereum"><br />Ethereum</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="mining" class="section section-bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">            
+            <h2><i class="fa fa-desktop"></i></h2>
+            <p class="lead" data-l10n-id="mining_description">You can't give! You can mine cryptocurrency to help us. Mining uses only the power of your computer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="translation" class="section section-bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2><i class="fa fa-globe"></i></h2>
+            <p class="lead" data-l10n-id="translation_description">You can translate into a language you know, and fix mistakes.</p>
+            <a class="btn btn-default" title="Translate" href="https://hosted.weblate.org/projects/keepass-dx/"><i class="fa fa-language"></i><span data-l10n-id="translate">Translate</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="code" class="section section-bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2><i class="fa fa-code"></i></h2>
+            <p class="lead" data-l10n-id="code_description">You can develop the features you want to implement, it's open source.</p>
+            <a class="btn btn-default" href="https://github.com/Kunzisoft/KeePassDX/" title="Code"><i class="fa fa-code"></i><b data-l10n-id="code">Code</b></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="feedback" class="section section-bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2><i class="fa fa-comment"></i></h2>
+            <p class="lead" data-l10n-id="feedback_description">Express yourself and leave your comment, KeePass DX is improved thanks to your recommendations.</p>
+            <a class="btn btn-success" href="https://github.com/Kunzisoft/KeePassDX/issues" title="Issues"><i class="fa fa-bug"></i><b data-l10n-id="issues">Issues</b></a>
+            <a class="btn btn-default" href="mailto:contact@kunzisoft.com" title="Ask community"><i class="fa fa-comment"></i><b>contact@kunzisoft.com</b></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="share" class="section section-bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">            
+            <h2><i class="fa fa-share"></i></h2>
+            <p class="lead" data-l10n-id="share_description">Share KeePass DX with your friends, it would be a shame they lose their access password while you have a guild meeting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="bitcoin" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><a href="https://bitcoin.org/"><img src="img/bitcoin.png" alt="Logo bitcoin" /><span> Bitcoin</span></a></h4>
+          </div>
+          <div class="modal-body">
+              <div class="description">
+                <div>
+                    <p><span data-l10n-id="cryptocurrency_scan">Scan this QR with your wallet application</span></p>
+                    <div class="cryptokey">
+                        <img src="img/bitcoin_qr.png" alt="QR bitcoin">
+                        <a href="bitcoin:1DSwXCk7Sob24sNsofywNoRQw2f5Qj5t2F" target="_blank">1DSwXCk7Sob24sNsofywNoRQw2f5Qj5t2F</a>
+                    </div>
+                </div>
+              </div> 
+          </div>
+          <div class="modal-footer">
+            <a href="https://live.blockcypher.com/btc/address/1DSwXCk7Sob24sNsofywNoRQw2f5Qj5t2F/" class="btn btn-info"><span>Blockchain</span></a>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><span data-l10n-id="close">Fermer</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="litecoin" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><a href="https://litecoin.org/"><img src="img/litecoin.png" alt="Logo litecoin" /> Litecoin</a></h4>
+          </div>
+          <div class="modal-body">
+          <div class="description">
+            <div>
+                <p><span data-l10n-id="cryptocurrency_scan">Scan this QR with your wallet application</span></p>
+                <div class="cryptokey">
+                    <img src="img/litecoin_qr.png" alt="QR litecoin">
+                    <a href="litecoin:LRmhvGbKNXFLTxyK8Q9zBxDXjBWm6Rzt34" target="_blank">LRmhvGbKNXFLTxyK8Q9zBxDXjBWm6Rzt34</a>
+                </div>
+            </div>
+        </div>
+            
+          </div>
+          <div class="modal-footer">
+            <a href="https://live.blockcypher.com/ltc/address/LRmhvGbKNXFLTxyK8Q9zBxDXjBWm6Rzt34/" class="btn btn-info"><span>Blockchain</span></a>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><span data-l10n-id="close">Fermer</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="ethereum" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><a href="https://www.ethereum.org/"><img src="img/ethereum.png" alt="Logo ethereum" /> Ethereum</a></h4>
+          </div>
+          <div class="modal-body">
+          <div class="description">
+            <div>
+                <p><span data-l10n-id="cryptocurrency_scan">Scan this QR with your wallet application</span></p>
+                <div class="cryptokey">
+                    <img src="img/ethereum_qr.png" alt="QR Ethereum">
+                    <a href="ethereum:0x6F5De8c22C4869c4a5D3a48975a42C9498de3CAB" target="_blank">0x6F5De8c22C4869c4a5D3a48975a42C9498de3CAB</a>
+                </div>
+            </div>
+        </div>
+            
+          </div>
+          <div class="modal-footer">
+            <a href="https://www.etherchain.org/account/6F5De8c22C4869c4a5D3a48975a42C9498de3CAB" class="btn btn-info"><span>Blockchain</span></a>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><span data-l10n-id="close">Fermer</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="monero" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><a href="https://getmonero.org/"><img src="img/monero.png" alt="Logo monero" /> Monero</a></h4>
+          </div>
+          <div class="modal-body">
+          <div class="description">
+            <div>
+                <p><span data-l10n-id="cryptocurrency_scan">Scan this QR with your wallet application</span></p>
+                <div class="cryptokey">
+                    <img src="img/monero_qr.png" alt="QR Monero">
+                    <a href="monero:4BFGwyshAa2YwwXNboQ4r78Vv9hf83cFBCF8vAd8jAQRbUQho187hKSLQpzWBsV7LW2gNXUthvb8W4hHBifTfhdSMKvTDP7" target="_blank">4BFGwyshAa2YwwXNboQ4r78Vv9hf83cFBCF8vAd8jAQRbUQho187hKSLQpzWBsV7LW2gNXUthvb8W4hHBifTfhdSMKvTDP7</a>
+                </div>
+            </div>
+        </div>
+            
+          </div>
+          <div class="modal-footer">
+            <a href="https://moneroexplorer.com/" class="btn btn-info"><span>Blockchain</span></a>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><span data-l10n-id="close">Close</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <!-- Footer -->
+    <footer class="section-bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <p class="copyright text-muted">
+                <span data-l10n-id="powered_by">Powered by</span><a href="https://www.kunzisoft.com"> Kunzisoft</a>
+            </p>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <p class="copyright text-muted">Copyright &copy; KeePass DX 2018. <span data-l10n-id="allRightsReserved">All rights reserved</span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
