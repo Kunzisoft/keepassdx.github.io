@@ -91,11 +91,11 @@
 
             <h2 data-l10n-id="">Why KeePass DX?</h2>
                 <p data-l10n-id="">KeePass DX is an <strong>Android app</strong> implemented from Keepass password manager.</p>
-                <p data-l10n-id="">KeePass DX was created to meet the security and usability needs of a KeePass application on Android :</p>
+                <p data-l10n-id="">KeePass DX was created to meet the security and usability needs of a KeePass app on Android :</p>
                 <ul>
                     <li data-l10n-id="">To be easy to use with <strong>secure password management and form filling tools</strong>.</li>
-                    <li data-l10n-id="">To use only tools under <strong>open source license</strong> to guarantee the security of the application (With <a href="https://f-droid.org/en/">open source store</a> and no closed API).</li>
-                    <li data-l10n-id="">To be in a <strong>native langage</strong> (java) for weight, security and a better integration of the application.</li>
+                    <li data-l10n-id="">To use only tools under <strong>open source license</strong> to guarantee the security of the app (With <a href="https://f-droid.org/en/">open source store</a> and no closed API).</li>
+                    <li data-l10n-id="">To be in a <strong>native langage</strong> (java) for weight, security and a better integration of the app.</li>
                     <li data-l10n-id="">To respect <strong>Android design, architecture and ergonomic</strong>.</li>
                 </ul>
 
@@ -112,18 +112,22 @@
             <p data-l10n-id=""><strong>No</strong>, you can not open a database file without the master password (and / or) the associated key file. Be sure to remember your master password and save the key file in a safe place.</p>
 
             <h2 data-l10n-id="">Can I open my database easily other than with a password?</h2>
-            <p data-l10n-id=""><strong>Yes</strong>, we have integrated a secure openning option of fingerprint for android devices that support this feature, so no one can access the application without scanning his/her fingerprint or fill a master key. <em>(You must always know your master password, the fingerprint is only a quick unlock tool.)</em></p>
+            <p data-l10n-id=""><strong>Yes</strong>, we have integrated a secure openning option of fingerprint for android devices that support this feature, so no one can access the app without scanning his/her fingerprint or fill a master key. <em>(You must always know your master password, the fingerprint is only a quick unlock tool.)</em></p>
             
 
-            <h2 data-l10n-id="">How am I sure my passwords are safely stored on the application?</h2>
+            <h2 data-l10n-id="">How am I sure my passwords are safely stored on the app?</h2>
             <p data-l10n-id="">We allow users to save and use passwords, keys and digital identities in a secure way by <strong>integrating the last encryption algorithms</strong> and <strong>Android architecture standards</strong>.</p>
             <p data-l10n-id="">You can increase the security of your database by changing the encryption algorythm and increasing the rounds of encryption keys. <em>(In Settings -&gt; Database Settings when your database is open)</em> <strong>Warning</strong>: <em>Increase the number of rounds sparingly to have a reasonable opening time.</em></p>
 
             <h2 data-l10n-id="">Why not an online version?</h2>
-            <p data-l10n-id="">The offline and online client concepts only exists with other apps because the file access network tools are directly integrated into the code of the main application. Which is a very dubious choice knowing that <strong>it is not normally the purpose of a password management application to take care of external file synchronization on clouds</strong> (which can be under closed licensed and recover your data base), it is rather the purpose of the <a href="https://developer.android.com/guide/topics/providers/document-provider">file management application</a>.</p>
+            <p data-l10n-id="">The offline and online client concepts only exists with other apps because the file access network tools are directly integrated into the code of the main app. Which is a very dubious choice knowing that <strong>it is not normally the purpose of an Android password management app to take care of external file synchronization on clouds</strong> (which can be under closed licensed and recover your data base), it is rather the purpose of the <a href="https://developer.android.com/guide/topics/providers/document-provider">file management app</a>.</p>
 
             <h2 data-l10n-id="">Can I store my data on a cloud storage?</h2>
-            <p data-l10n-id=""><strong>Yes</strong> this is possible. You can of course add the cloud application of your choice to your file manager (NextCloud, Owncloud, Dropbox, Google Drive...). We recommend using a cloud with personal server and open source license, like <a href="https://nextcloud.com/">NextCloud</a> to be sure how your databases are stored.</p>
+            <p data-l10n-id=""><strong>Yes</strong> this is possible. You can of course add the cloud app of your choice to your file manager (<a href="https://play.google.com/store/apps/details?id=com.nextcloud.client">NextCloud</a>, <a href="https://play.google.com/store/apps/details?id=com.owncloud.android">Owncloud</a>, <a href="https://play.google.com/store/apps/details?id=com.dropbox.android">Dropbox</a>, <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.docs">Google Drive</a>...). We recommend using a cloud with personal server and open source license, like <a href="https://nextcloud.com/">NextCloud</a> to be sure how your databases are stored.</p>
+            
+            <h2 data-l10n-id="">How to open my database file from a cloud?</h2>
+            <p data-l10n-id="">Keepass DX uses the default file manager of your device. <strong>If this manager is not connected to your cloud, you need to open your cloud app and select your database file.</strong> The linked file provided by the content provider may have a strange name with series of numbers and letters <em>(like eab4678a-33f1-4890-acba-42f1b5cbac13)</em>, an alias feature is in development for better visibility.
+            <p>We're thinking about creating or modifying an open source file manager app to make it easier to open remote files.</p>
 
             <h2 data-l10n-id="">Can I recover my passwords on another device if I loose my main device?</h2>
             <p data-l10n-id=""><strong>Yes</strong> you can, but you <strong>must first save the .kdb or .kdbx file from your database to an external storage</strong> <em>(like a hardrive or a cloud)</em>.
@@ -138,23 +142,23 @@ We recommend you save your data after each modification so incase you loose your
             <h2 data-l10n-id="">Why a <strong>Libre</strong>, <strong>Free</strong> and <strong>Pro</strong> version?</h2>
             <p data-l10n-id="">All versions currently have the same usage features.</p>
             <ul>
-                <li data-l10n-id=""><a href="https://www.f-droid.org/en/packages/com.kunzisoft.keepass.libre/"><strong>The Libre version</strong></a>, for paranoids <em>(so the recommended version)</em>, is the version provided by F-Droid, it is guaranteed without any proprietary code and is not linked to any closed service. The application is automatically signed and compiled from the github repository. It is possible to unlock the themes with a procedure.</li>
+                <li data-l10n-id=""><a href="https://www.f-droid.org/en/packages/com.kunzisoft.keepass.libre/"><strong>The Libre version</strong></a>, for paranoids, is the version provided by F-Droid, it is guaranteed without any proprietary code and is not linked to any closed service. The app is automatically signed and compiled from the github repository. It is possible to unlock the themes with a procedure.</li>
                 <li data-l10n-id=""><a href="https://play.google.com/store/apps/details?id=com.kunzisoft.keepass.free"><strong>The Free version</strong></a>, for everyday use, is the basic version of the Google Play Store. It is compiled and signed by the developers and sent to the Play Store to be cataloged by Google. It has the same features as other versions with alternative themes blocked.</li>
-                <li data-l10n-id=""><a href="https://play.google.com/store/apps/details?id=com.kunzisoft.keepass.pro"><strong>The Pro version</strong></a>, for people who want everything, is the unlocked version of the Google Play Store. It is currently available only to assist developments. It has unlocked themes and will have content to facilitate synchronizations to commonly used proprietary services.</li>
+                <li data-l10n-id=""><a href="https://play.google.com/store/apps/details?id=com.kunzisoft.keepass.pro"><strong>The Pro version</strong></a>, for people who want everything, is the unlocked version of the Google Play Store. It has unlocked themes and will have content to facilitate the integration of entries for commonly used services. <em>(It is currently available only to assist developments.)</em></li>
             </ul>
 
             <h2 data-l10n-id="">Why not give direct access to alternative themes?</h2>
-            <p>Alternative themes are present to encourage users to contribute. They might just not be there because they do not provide any usage feature but are rather cool and replace the advertisement.</p>
-            <p>The procedure to unlock these themes in KeePass Libre is sent by email manually so feel free to ask at <a href="mailto:contact@kunzisoft.com">contact@kunzisoft.com</a> if you have made a contribution.</p>
+            <p data-l10n-id="">Alternative themes are present <strong>to encourage users to contribute</strong>. They might just not be there because they do not provide any usage feature but are rather cool and replace the advertisement.</p>
+            <p data-l10n-id="">The procedure to unlock these themes in KeePass Libre is sent by email manually so feel free to ask at <a href="mailto:contact@kunzisoft.com">contact@kunzisoft.com</a> if you have made a contribution.</p>
 
             <h2 data-l10n-id="">Why KeePass DX is still in beta?</h2>
-            <p>Developments are not yet completed and basic features such as managing attachments and synchronization are not yet integrated.</p>
+            <p data-l10n-id=""><strong>Developments are not yet completed</strong> and basic features such as managing attachments and synchronization are not yet integrated. Of course, the app respects a specific update workflow to avoid bugs even in its beta version.</p>
 
             <h2 data-l10n-id="">Is an IOS version planned?</h2>
             <p><strong>Yes</strong>, but only if the Android version is used by a majority of users and if there is a high demand.</p>
 
-            <h2 data-l10n-id="">Can I suggest features and report bugs for the application?</h2>
-            <p><strong>Yes</strong>, we welcome this you could go ahead and do that on our github:
+            <h2 data-l10n-id="">Can I suggest features and report bugs for the app?</h2>
+            <p data-l10n-id=""><strong>Yes</strong>, we welcome this you could go ahead and do that on our github:
             <a href="https://github.com/Kunzisoft/KeePassDX/issues">https://github.com/Kunzisoft/KeePassDX/issues</a></p>
           </div>
 
