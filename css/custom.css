@@ -1,5 +1,5 @@
-li {
-  /*! list-style: none; */
+body {
+  font-size: 18px;
 }
 
 h1,
@@ -107,12 +107,7 @@ h5 i.fa.description-icon {
   color: #fb8c00;
 }
 .description-content p {
-  /*! min-height: 200px; */
-  font-size: 1.2em;
-}
-.description-content .description-tile {
-  min-height: 325px;
-  padding: 0px 20px 0px 20px;
+  font-size: 1.1em;
 }
 .description-content button i {
   margin-right: 10px;
@@ -151,7 +146,7 @@ header>div {
   background: linear-gradient(to left, #56ba5a, #439445) !important;
   z-index: -10;
   min-height: 100vh;
-  transform: skewY(-10deg);
+  transform: skewY(-16deg);
   transform-origin: bottom left;
 }
 .splash .container {
@@ -168,17 +163,17 @@ header>div {
 }
 .splash h2 {
   color: #fff;
-  font-size: 2.4em;
+  font-size: 1.4em;
   margin-top: 0.4em;
 }
 .splash h3 {
-  font-size: 1.4em;
+  font-size: 1.2em;
   margin-top: 1em;
   color: #c996e9;
   text-shadow: 0px 1px 2px #000;
 }
 .splash p {
-  font-size: 1.4em;
+  font-size: 1.1em;
   color: #fff;
 }
 .splash img {

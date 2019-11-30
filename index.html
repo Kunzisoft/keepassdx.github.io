@@ -97,24 +97,12 @@
           </div>
         </div>
       </div>
-      <a class="bottom scrollTo" href="#help">
+      <a class="bottom scrollTo" href="#description">
         <img src="./img/ic_arrow_bottom.svg" alt="icon arrow" />
       </a>
     </div>
     
-    <div id="help" class="section section-bg-light section-smallTop">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <h1><i class="fa fa-lock"></i><span data-l10n-id="what_keepassdx">What is KeePass DX?</span></h1>
-            <p class="lead" data-l10n-id="what_keepassdx_description">KeePass DX is a free open source password manager for Android, which helps you to manage your passwords in a secure way. You can put all your passwords in one database, which is locked with one master key and/or a key file. So you only have to remember one single master password and/or select the key file to unlock the whole database. The databases are encrypted using the best and most secure encryption algorithms currently known.</p>
-            <a class="btn btn-primary popup-modal" href="https://github.com/Kunzisoft/KeePassDX/wiki"><i class="fa fa-question"></i> Wiki</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="description" class="section description-content">
+    <div id="description" class="section section-bg-light">
       <div class="container">
         <div class="row">
 
@@ -139,35 +127,50 @@
         </div>
       </div>
     </div>
+    
+    <div id="help" class="section section-smallTop description-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1><i class="fa fa-lock"></i><span data-l10n-id="what_keepassdx">What is KeePass DX?</span></h1>
+            <p data-l10n-id="what_keepassdx_description">KeePass DX is a free open source password manager for Android, which helps you to manage your passwords in a secure way. You can put all your passwords in one database, which is locked with one master key and/or a key file. So you only have to remember one single master password and/or select the key file to unlock the whole database. The databases are encrypted using the best and most secure encryption algorithms currently known.</p>
+            <a class="btn btn-primary popup-modal" href="https://www.keepassdx.com/FAQ"><i class="fa fa-question"></i> F.A.Q.</a>
+            <a class="btn btn-primary popup-modal" href="https://github.com/Kunzisoft/KeePassDX/wiki"><i class="fa fa-question"></i> Wiki</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="section section-bg-light">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
               <h2><i class="fa fa-list"></i><span data-l10n-id="features">Features</span></h2>     
-              <ul class="lead" >
+              <ul>
                 <li data-l10n-id="create_database">Create database files / entries and groups</li>
                 <li data-l10n-id="support_kdbx">Support for .kdb and .kdbx files (version 1 to 4) with <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES</a> - <a href="https://en.wikipedia.org/wiki/Twofish">Twofish</a> - <a href="https://en.wikipedia.org/wiki/Salsa20">ChaCha20</a> - <a href="https://en.wikipedia.org/wiki/Argon2">Argon2</a> algorithm</li>
                 <li data-l10n-id="compatible_alternative">Compatible with the majority of alternative programs (<a href="https://keepass.info/">KeePass</a>, <a href="https://keepassxc.org/">KeePass XC</a>, <a href="https://keeweb.info/">KeeWeb</a>...)</li>
                 <li data-l10n-id="copy_fields">Allows fast copy of fields and opening of URI / URL</li>
-                <li data-l10n-id="fingerprint_unlocking">Fingerprint for fast unlocking</li>
+                <li data-l10n-id="biometric_unlocking"><strong>Biometric recognition</strong> for fast unlocking (Fingerprint / Face unlock / ...)</li>
+                <li data-l10n-id="otp_management"><strong>One-Time Password</strong> management (HOTP / TOTP) for Two-factor authentication (2FA)</li>
                 <li data-l10n-id="material_themes">Material design with themes</li>
                 <li data-l10n-id="autofill_integration">AutoFill and Integration</li>
                 <li data-l10n-id="field_filling_keyboard">Field filling keyboard (Magikeyboard)</li>
                 <li data-l10n-id="management_settings">Precise management of settings</li>
+                <li data-l10n-id="code_written">Code written in <strong>native language</strong> (Kotlin / Java / JNI / C)</li>
               </ul>
           </div>
           <div id="contribute" class="col-md-6">
             <h2><i class="fa fa-heart"></i><span data-l10n-id="maintain_app">Maintain the app</span></h2>
-             <p class="lead" data-l10n-id="maintain_description_a">KeePass DX could not exist without you because we need you to maintain the app.</p>
-            <p class="lead" data-l10n-id="maintain_description_b">Want to support development, submit a feature, translate, upload a bug or just give?</p>
+             <p data-l10n-id="maintain_description_a">KeePass DX could not exist without you because we need you to maintain the app.</p>
+            <p data-l10n-id="maintain_description_b">Want to support development, submit a feature, translate, upload a bug or just give?</p>
             <a class="btn btn-primary" href="contribution.html" title="Contribution"><i class="fa fa-heart"></i> <span data-l10n-id="contribute">Contribute</span></a>
-          </div>
-          <div class="col-md-6">
-            <a class="social" href="https://github.com/Kunzisoft/KeePassDX"><i class="fa fa-github"></i></a>
           </div>
           <div id="contact" class="col-md-6">
             <a class="btn btn-default" href="mailto:contact@kunzisoft.com" title="Contact"><i class="fa fa-comment"></i> contact@kunzisoft.com</a>
+          </div>
+          <div class="col-md-6">
+            <a class="social" href="https://github.com/Kunzisoft/KeePassDX"><i class="fa fa-github"></i></a>
           </div>
         </div>
       </div>
