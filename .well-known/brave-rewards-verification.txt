@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: keepassdx.com
+Token: b77c4a18addf6a6112dc1e27937b064959c5fecacf0fbed53a24044c38a94763
