@@ -7,11 +7,11 @@
                 Download it in your device then import it into your database.</p>
         </div>
 
-        <div class="row">
+        <div class="row icon-tile-container">
             <div *ngFor="let icon of images | searchIconFilter: searchText | slice: (page-1) * pageSize : page * pageSize"
                 class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
                 <div class="icon-tile tile"
-                placement="top"
+                placement="bottom"
                 popoverTitle="Support"
                 ngbPopover="Thank you for your download. If you are satisfied, feel free to make a donation. ʕ•ᴥ•ʔ">
                     <figure class="justify-content-center" (click)="downloadPNGIcon(icon, pngIconSize)">
