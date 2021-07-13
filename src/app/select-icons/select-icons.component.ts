@@ -49,7 +49,7 @@ export class SelectIconsComponent implements OnInit {
       this.maxPagination = 4
     }
     else {
-      this.pageSize = 6
+      this.pageSize = 4
       this.maxPagination = 5
     }
   }
