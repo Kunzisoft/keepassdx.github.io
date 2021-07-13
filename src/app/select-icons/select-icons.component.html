@@ -7,13 +7,6 @@
                 Download it in your device then import it into your database.</p>
         </div>
 
-        <div class="content" role="main">
-            <div class="form-group">
-                <input type="search" class="form-control" id="search-icon" aria-describedby="search-icon" 
-                [(ngModel)]="searchText" placeholder="Icon to search" >
-            </div>
-        </div>
-
         <div class="row">
             <div *ngFor="let icon of images | searchIconFilter: searchText | slice: (page-1) * pageSize : page * pageSize"
                 class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
@@ -34,6 +27,13 @@
                         [pageSize]="pageSize"
                         [maxSize]="maxPagination"
                         [collectionSize]="(images | searchIconFilter: searchText).length"></ngb-pagination>
+
+        <div class="content" role="main">
+            <div class="form-group">
+                <input type="search" class="form-control" id="search-icon" aria-describedby="search-icon" 
+                [(ngModel)]="searchText" placeholder="Icon to search" >
+            </div>
+        </div>
   
     </div>
 </section>
