@@ -22,18 +22,18 @@
             </div>
         </div>
 
-        <ngb-pagination #pagination class="d-flex justify-content-center"
-                        [(page)]="page"
-                        [pageSize]="pageSize"
-                        [maxSize]="maxPagination"
-                        [collectionSize]="(images | searchIconFilter: searchText).length"></ngb-pagination>
-
         <div class="content" role="main">
             <div class="form-group">
                 <input type="search" class="form-control" id="search-icon" aria-describedby="search-icon" 
                 [(ngModel)]="searchText" placeholder="Icon to search" >
             </div>
         </div>
+
+        <ngb-pagination #pagination class="d-flex justify-content-center"
+                        [(page)]="page"
+                        [pageSize]="pageSize"
+                        [maxSize]="maxPagination"
+                        [collectionSize]="(images | searchIconFilter: searchText).length"></ngb-pagination>
   
     </div>
 </section>
