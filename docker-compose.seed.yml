@@ -1,0 +1,10 @@
+version: "3"
+services:
+  seed:
+    image: node:lts
+    working_dir: "/usr/src/seed"
+    volumes:
+      - ./:/usr/src/seed_output
+    entrypoint: >
+      bash -c "npm i @angular/cli <<< N && npx ng new --skipInstall --skipGit && 
+             mv `ls -d */ | grep -v node_modules | xargs -I {} find {} -mindepth 1 -maxdepth 1` /usr/src/seed_output"

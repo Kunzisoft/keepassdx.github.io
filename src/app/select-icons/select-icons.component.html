@@ -1,0 +1,39 @@
+<section id="icons">
+    <div class="container-md">
+  
+        <div class="section-title">
+            <h2 class="card-title">Icons selector</h2>
+            <p>Want to download a custom icon for a new entry?<br />
+                Download it in your device then import it into your database.</p>
+        </div>
+
+        <div class="content" role="main">
+            <div class="form-group">
+                <input type="search" class="form-control" id="search-icon" aria-describedby="search-icon" 
+                [(ngModel)]="searchText" placeholder="Icon to search" >
+            </div>
+        </div>
+
+        <div class="row">
+            <div *ngFor="let icon of images | searchIconFilter: searchText | slice: (page-1) * pageSize : page * pageSize"
+                class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
+                <div class="icon-tile tile"
+                placement="top"
+                popoverTitle="Support"
+                ngbPopover="Thank you for your download. If you are satisfied, feel free to make a donation. ʕ•ᴥ•ʔ">
+                    <figure class="justify-content-center" (click)="downloadPNGIcon(icon, pngIconSize)">
+                        <img [src]="showIcon(icon)" class="icon-preview" [alt]="icon.title">
+                        <figcaption>{{ icon.title }}</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <ngb-pagination #pagination class="d-flex justify-content-center"
+                        [(page)]="page"
+                        [pageSize]="pageSize"
+                        [maxSize]="maxPagination"
+                        [collectionSize]="(images | searchIconFilter: searchText).length"></ngb-pagination>
+  
+    </div>
+</section>

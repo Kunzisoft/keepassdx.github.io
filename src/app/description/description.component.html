@@ -1,0 +1,22 @@
+<section id="description">
+  <div class="container-md">
+
+    <div class="section-title">
+      <h2><span data-l10n-id="what_keepassdx">{{ title }}</span></h2>
+      <p data-l10n-id="what_keepassdx_description">{{ summary }}</p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-12 col-lg-4" [ngClass]="((descriptions.length % 2 === 1) && (descriptions.length-position - 1) === 0) ? 'col-md-12' : 'col-md-6'"
+        *ngFor="let item of descriptions ; let position = index">
+        <div class="tile">
+          <h3><fa-icon [icon]="item.icon"></fa-icon><span data-l10n-id="secure">{{ item.title }}</span></h3>
+          <p data-l10n-id="secure_description">{{ item.description }}</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,87 @@
+@import 'variables'
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap'
+
+html
+    scroll-behavior: smooth
+
+body
+    font-family: "Open Sans", sans-serif
+    color: #444444
+
+.btn fa-icon
+    margin-right: 8px
+
+h1, h2, h3, h4, h5, h6
+    color: $secondary
+    font-family: "Jost", sans-serif
+    margin-bottom: 24px
+
+h1 fa-icon, h2 fa-icon, h3 fa-icon, h4 fa-icon, h5 fa-icon, h6 fa-icon
+    display: block
+    margin-bottom: 12px
+    color: $primary
+
+.nav-link
+    color: white
+
+section
+    padding-top: 48px
+    padding-bottom: 0px
+
+section li:before
+    margin-left: -20px
+    margin-right: 10px
+
+.section-title
+    text-align: center
+    margin-bottom: 30px
+
+.section-title h2
+    font-size: 32px
+    font-weight: bold
+    text-transform: uppercase
+    margin-bottom: 25px
+    padding-bottom: 20px
+    position: relative
+    color: $secondary
+
+.section-title h2::after
+    content: ''
+    position: absolute
+    display: block
+    width: 40px
+    height: 3px
+    background: $secondary
+    bottom: 0
+    left: calc(50% - 20px)
+
+.tile
+    box-shadow: 0px 0 25px 0 rgb(0 0 0 / 10%)
+    padding: 50px 30px
+    transition: all ease-in-out 0.4s
+    background: #fff
+    margin: 8px
+    margin-top: 12px
+    margin-bottom: 12px
+
+.tile-border-top
+    border-top: 4px solid $primary
+
+.list-group
+    box-shadow: 0 3px 20px -2px rgb(20 45 100 / 10%)
+    border-top: 4px solid $primary
+
+.list-group-item
+    padding: 20px
+
+.list-group-item fa-icon
+    margin-right: 12px
+    color: #fff
+    font-size: 150%
+
+.markdown-section
+    overflow: hidden
+    transition: height 0.3s ease-out
+    height: auto
