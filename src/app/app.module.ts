@@ -95,7 +95,7 @@ function closeAccordion(): string {
 function openTitle(itemIterator: number): string {
   return `<div id="heading` + itemIterator + `">
   <h2 class="mb-0">
-  <button class="btn btn-outline-secondary btn-block" onClick="
+  <button class="btn btn-secondary btn-block" onClick="
     var content = document.getElementById('mdCollapse` + itemIterator + `')
     var isCollapsed = content.getAttribute('md-data-collapsed') === 'true';
     if(isCollapsed) {
