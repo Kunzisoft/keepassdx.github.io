@@ -38,7 +38,7 @@
                         A new payment system and an entirely digital currency. <br />Thank you for believing in the future.
                     </p>
                     <div class="btn-group-vertical btn-block" role="group" aria-label="cryptocurrencies">
-                        <div *ngFor="let item of cryptoCurrencies" class="btn" [ngClass]="{'btn-outline-primary': !item.highlighted, 'btn-primary': item.highlighted}" (click)="openCryptoCurrencyModal(modalCryptoCurrency)" title="Donate {{ item.name }}">
+                        <div *ngFor="let item of cryptoCurrencies" class="btn" [ngClass]="{'btn-outline-secondary': !item.highlighted, 'btn-secondary': item.highlighted}" (click)="openCryptoCurrencyModal(modalCryptoCurrency)" title="Donate {{ item.name }}">
                             <fa-icon [icon]="item.icon"></fa-icon>{{ item.name }} ({{ item.currency }})
 
                             <!-- Modal content -->
@@ -50,7 +50,6 @@
                                 <div class="modal-body text-center">
                                     <div class="description">
                                     <div>
-                                        <p>Scan this QR with your wallet application</p>
                                         <div class="cryptokey">
                                             <img src="{{ item.qrImgPath }}" alt="QR {{ item.name }}">
                                             <div class="copy" (click)="copyCurrencyToClipboard(item)" placement="bottom"
@@ -64,7 +63,7 @@
                                     </div> 
                                 </div>
                                 <div class="modal-footer">
-                                    <button ngbAutofocus type="button" class="btn btn-outline-primary" data-dismiss="modal" (click)="modal.dismiss()">Close</button>
+                                    <button ngbAutofocus type="button" class="btn btn-outline-secondary" data-dismiss="modal" (click)="modal.dismiss()">Close</button>
                                 </div>
                             </ng-template>
                         </div>
