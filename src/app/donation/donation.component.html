@@ -39,12 +39,12 @@
                     </p>
                     <div class="btn-group-vertical btn-block" role="group" aria-label="cryptocurrencies">
                         <div *ngFor="let item of cryptoCurrencies" class="btn" [ngClass]="{'btn-outline-primary': !item.highlighted, 'btn-primary': item.highlighted}" (click)="openCryptoCurrencyModal(modalCryptoCurrency)" title="Donate {{ item.name }}">
-                            <fa-icon [icon]="item.icon"></fa-icon>{{ item.name }}
+                            <fa-icon [icon]="item.icon"></fa-icon>{{ item.name }} ({{ item.currency }})
 
                             <!-- Modal content -->
                             <ng-template #modalCryptoCurrency let-modal>
                                 <div class="modal-header text-left">
-                                    <h4 class="modal-title"><a [href]="item.webSiteUrl"><fa-icon [icon]="item.icon"></fa-icon><span> {{ item.name }}</span></a></h4>
+                                    <h4 class="modal-title"><a [href]="item.webSiteUrl"><fa-icon [icon]="item.icon"></fa-icon> {{ item.name }} ({{ item.currency }})</a></h4>
                                     <a *ngIf="item.explorer.length > 0" class="btn btn-primary" [href]="item.explorer">Explorer</a>
                                 </div>
                                 <div class="modal-body text-center">

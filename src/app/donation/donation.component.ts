@@ -24,6 +24,7 @@ export class DonationComponent implements OnInit {
     {
       name: "Bitcoin",
       icon: this.faBitcoin,
+      currency: "BTC",
       webSiteUrl: "https://bitcoin.org/",
       qrImgPath: "assets/img/bitcoin_qr.png",
       walletAddress: "1DSwXCk7Sob24sNsofywNoRQw2f5Qj5t2F",
@@ -34,6 +35,7 @@ export class DonationComponent implements OnInit {
     {
       name: "Ethereum",
       icon: this.faEthereum,
+      currency: "ETH",
       webSiteUrl: "https://www.ethereum.org/",
       qrImgPath: "assets/img/ethereum_qr.png",
       walletAddress: "0x6F5De8c22C4869c4a5D3a48975a42C9498de3CAB",
@@ -44,6 +46,7 @@ export class DonationComponent implements OnInit {
     {
       name: "Cardano",
       icon: this.faCardano,
+      currency: "ADA",
       webSiteUrl: "https://cardano.org/",
       qrImgPath: "assets/img/cardano_qr.png",
       walletAddress: "addr1qxfuczz53wuwa4dqmluptakv2gnkgslqyhf73spq2vvkykcu0tkh8aw9ehfd8xfqdtp6vvz0nnz6xzkltzfxua5uv35qqzm4s0",
@@ -54,6 +57,7 @@ export class DonationComponent implements OnInit {
     {
       name: "Monero",
       icon: this.faMonero,
+      currency: "XMR",
       webSiteUrl: "https://getmonero.org/",
       qrImgPath: "assets/img/monero_qr.png",
       walletAddress: "4BFGwyshAa2YwwXNboQ4r78Vv9hf83cFBCF8vAd8jAQRbUQho187hKSLQpzWBsV7LW2gNXUthvb8W4hHBifTfhdSMKvTDP7",
