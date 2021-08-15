@@ -53,7 +53,12 @@
                                         <p>Scan this QR with your wallet application</p>
                                         <div class="cryptokey">
                                             <img src="{{ item.qrImgPath }}" alt="QR {{ item.name }}">
-                                            <a href="{{ item.walletUrl }}" target="_blank">{{ item.walletAddress }}</a>
+                                            <div class="copy" (click)="copyCurrencyToClipboard(item)" placement="bottom"
+                                            ngbPopover="Address copied in clipboard!">
+                                                <span #address>{{ item.walletAddress }}</span>
+                                                <br />
+                                                <fa-icon [icon]="faCopy"></fa-icon>
+                                            </div>
                                         </div>
                                     </div>
                                     </div> 
