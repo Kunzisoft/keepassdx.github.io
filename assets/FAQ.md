@@ -26,7 +26,7 @@ Be sure to remember your master password and save the keyfile in a safe place. T
 **You must always know your master password, the advanced unlocking is only a faster unlocking tool.**
 
 ## How am I sure my passwords are safely stored in the app?
-Users are allowed to save and use passwords, keys and digital identities in a secure way by **integrating the last encryption algorithms** and **Android architecture standards**. All the source-code can be used, studied, changed, and distributed freely.
+Users are allowed to save and use passwords, keys and digital identities in a secure way by **integrating the lastest encryption algorithms** and **Android architecture standards**. All the source-code can be used, studied, changed, and distributed freely.
 
 You can increase the security of your database by changing the encryption algorithm and increase the rounds of encryption keys. (In `Settings → Database Settings` when your database is open)
 
