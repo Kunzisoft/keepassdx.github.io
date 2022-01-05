@@ -43,8 +43,8 @@ docker-compose exec dev sh
 You should copy the `node_modules` directory from your container after every package addition, to do so run:
 
 ```
-docker cp dev:/usr/src/app/package-lock.json . && \
-docker cp dev:/usr/src/app/node_modules - > temp_node_modules.tar && \
+docker cp dev-keepassdx:/usr/src/app/package-lock.json . && \
+docker cp dev-keepassdx:/usr/src/app/node_modules - > temp_node_modules.tar && \
     tar -xf temp_node_modules.tar && \
     rm -f temp_node_modules.tar
 ```
