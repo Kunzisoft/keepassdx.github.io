@@ -1,7 +1,7 @@
 version: "3"
 services:
   dev:
-    container_name: dev
+    container_name: dev-keepassdx
     build: .
     ports:
       - "4200:4200"
