@@ -6,5 +6,5 @@ services:
     volumes:
       - ./:/usr/src/seed_output
     entrypoint: >
-      bash -c "npm i @angular/cli <<< N && npx ng new --skipInstall --skipGit && 
+      bash -c "npm i @angular/cli@11.0.0 <<< N && npx ng new --skipInstall --skipGit && 
              mv `ls -d */ | grep -v node_modules | xargs -I {} find {} -mindepth 1 -maxdepth 1` /usr/src/seed_output"
