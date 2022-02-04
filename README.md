@@ -56,7 +56,7 @@ This process might take some time, but keep in mind you won't run it so often
 Connect to docker bash and launch angular build
 
 ```
-docker exec -it dev bash
+docker exec -it dev-keepassdx bash
 
 ng build --prod --base-href ./
 ```
