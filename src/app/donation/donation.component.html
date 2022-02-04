@@ -8,36 +8,36 @@
 
         <div class="row">
 
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="tile">
                     <h3><fa-icon [icon]="faCoffee"></fa-icon>Tip</h3>
                     <p>A tip supports the work done and shows your interest in the project. <br />The bugs are eradicated thanks to you. </p>
                     <div class="btn-group-vertical btn-block" role="group" aria-label="tips">
-                        <a class="btn btn-outline-secondary" title="Donate Google Play" href="https://play.google.com/store/apps/details?id=com.kunzisoft.keepass.pro&hl=en&gl=US"><fa-icon [icon]="faGooglePlay"></fa-icon>Google Play</a>
-                        <a class="btn btn-secondary" title="Donate Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KM6QMDAXZM3UU"><fa-icon [icon]="faPaypal"></fa-icon>Paypal / Credit Card</a>
+                        <a class="btn btn-secondary" title="Donate Google Play" href="https://play.google.com/store/apps/details?id=com.kunzisoft.keepass.pro&hl=en&gl=US"><fa-icon [icon]="faGooglePlay"></fa-icon>Google Play</a>
+                        <a class="btn btn-outline-secondary" title="Donate Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KM6QMDAXZM3UU"><fa-icon [icon]="faPaypal"></fa-icon>Paypal / Credit Card</a>
                         <!-- <a class="btn btn-outline-secondary disabled" title="Donate RIB/IBAN" role="button" aria-disabled="true"><fa-icon [icon]="faCreditCard"></fa-icon>RIB / IBAN [Soon]</a>-->
                     </div>
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="tile tile-border-top">
                     <h3><fa-icon [icon]="faHeart"></fa-icon>Regular donations</h3>
                     <p>Regular donations are a very elegant way to get involved in the project. <br />You ensure the perenity of the code and the application.</p>
                     <div class="btn-group-vertical btn-block" role="group" aria-label="donations">
                         <a class="btn btn-outline-secondary" title="Donate Liberapay" href="https://liberapay.com/Kunzisoft/donate"><fa-icon [icon]="faCreditCard"></fa-icon>Liberapay</a>
-                        <a class="btn btn-outline-secondary" title="Donate Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KM6QMDAXZM3UU"><fa-icon [icon]="faPaypal"></fa-icon>Paypal / Credit Card</a>
+                        <a class="btn btn-secondary" title="Donate Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KM6QMDAXZM3UU"><fa-icon [icon]="faPaypal"></fa-icon>Paypal / Credit Card</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="tile">
                     <h3><fa-icon [icon]="faBitcoin"></fa-icon>Crypto-currency</h3>
                     <p>
                         A new payment system and an entirely digital currency. <br />Thank you for believing in the future.
                     </p>
-                    <div class="btn-group-vertical btn-block" role="group" aria-label="cryptocurrencies">
+                    <div class="text-center btn-group-vertical btn-block" role="group" aria-label="cryptocurrencies">
                         <div *ngFor="let item of cryptoCurrencies" class="btn" [ngClass]="{'btn-outline-secondary': !item.highlighted, 'btn-secondary': item.highlighted}" (click)="openCryptoCurrencyModal(modalCryptoCurrency)" title="Donate {{ item.name }}">
                             <fa-icon [icon]="item.icon"></fa-icon>{{ item.name }} ({{ item.currency }})
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faBitcoin, faEthereum, faGooglePlay, faMonero, faPaypal } from '@fortawesome/free-brands-svg-icons';
-import { faCopy, faCoffee, faCertificate, faCreditCard, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faAtom, faCopy, faCoffee, faCertificate, faCreditCard, faInfinity, faMountain, faHeart, faCircle, faGlobeAfrica } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -14,6 +14,11 @@ export class DonationComponent implements OnInit {
   faCoffee = faCoffee
   faBitcoin = faBitcoin
   faEthereum = faEthereum
+  faAvalanche = faMountain
+  faPolygon = faInfinity
+  faPolkadot = faCircle
+  faTerra = faGlobeAfrica
+  faAtom = faAtom
   faCardano = faCertificate
   faMonero = faMonero
   faGooglePlay = faGooglePlay
@@ -53,6 +58,46 @@ export class DonationComponent implements OnInit {
       highlighted: false
     },
     {
+      name: "Terra",
+      icon: this.faTerra,
+      currency: "LUNA",
+      webSiteUrl: "https://terra.money/",
+      qrImgPath: "assets/img/terra_qr.png",
+      walletAddress: "terra1zgsge0ph28kxwq9x8l3yu4t2kge9z3eyhwjan3",
+      explorer: "https://finder.terra.money/mainnet/address/terra1zgsge0ph28kxwq9x8l3yu4t2kge9z3eyhwjan3",
+      highlighted: false
+    },
+    {
+      name: "Polkadot",
+      icon: this.faPolkadot,
+      currency: "DOT",
+      webSiteUrl: "https://polkadot.network/",
+      qrImgPath: "assets/img/polkadot_qr.png",
+      walletAddress: "133zP9mEYnNwEvZbfhuDWSGRYeBqRXVRGQThN4NupejBfYp7",
+      explorer: "https://polkadot.subscan.io/account/133zP9mEYnNwEvZbfhuDWSGRYeBqRXVRGQThN4NupejBfYp7",
+      highlighted: false
+    },
+    {
+      name: "Avalanche",
+      icon: this.faAvalanche,
+      currency: "AVAX",
+      webSiteUrl: "https://www.avax.network/",
+      qrImgPath: "assets/img/ethereum_qr.png",
+      walletAddress: "0x6F5De8c22C4869c4a5D3a48975a42C9498de3CAB",
+      explorer: "https://snowtrace.io/address/0x6F5De8c22C4869c4a5D3a48975a42C9498de3CAB",
+      highlighted: false
+    },
+    {
+      name: "Polygon",
+      icon: this.faPolygon,
+      currency: "MATIC",
+      webSiteUrl: "https://polygon.technology/",
+      qrImgPath: "assets/img/ethereum_qr.png",
+      walletAddress: "0x6F5De8c22C4869c4a5D3a48975a42C9498de3CAB",
+      explorer: "https://polygonscan.com/address/0x6F5De8c22C4869c4a5D3a48975a42C9498de3CAB",
+      highlighted: false
+    },
+    {
       name: "Monero",
       icon: this.faMonero,
       currency: "XMR",
@@ -60,6 +105,16 @@ export class DonationComponent implements OnInit {
       qrImgPath: "assets/img/monero_qr.png",
       walletAddress: "4BFGwyshAa2YwwXNboQ4r78Vv9hf83cFBCF8vAd8jAQRbUQho187hKSLQpzWBsV7LW2gNXUthvb8W4hHBifTfhdSMKvTDP7",
       explorer: "",
+      highlighted: false
+    },
+    {
+      name: "Cosmos",
+      icon: this.faAtom,
+      currency: "ATOM",
+      webSiteUrl: "https://cosmos.network/",
+      qrImgPath: "assets/img/cosmos_qr.png",
+      walletAddress: "cosmos179txcprxcezldk2smcwj536kj27vuptqun574h",
+      explorer: "https://atomscan.com/accounts/cosmos179txcprxcezldk2smcwj536kj27vuptqun574h",
       highlighted: false
     }
   ]
