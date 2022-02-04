@@ -64,7 +64,7 @@ ng build --prod --base-href ./
 ### Get production files
 
 ```
-docker cp dev:/usr/src/app/dist/ ./
+docker cp dev-keepassdx:/usr/src/app/dist/ ./
 
 ```
 
