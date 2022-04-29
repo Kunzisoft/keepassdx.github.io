@@ -1,14 +1,11 @@
 <section id="faq">
     <div class="container-md">
 
-        <div class="section-title">
-            <h2>Frequently Asked Questions</h2>
+        <div id="wiki-btn" class="text-center">
+            <div class="btn btn-secondary btn-lg" (click)="isCollapsed=!isCollapsed">Frequently Asked Questions</div>
+            <a class="btn btn-primary btn-lg" href="https://github.com/Kunzisoft/KeePassDX/wiki">Wiki</a>
         </div>
         
-        <markdown [src]="markdownUrl" ngPreserveWhitespaces></markdown>
-
-        <div id="wiki-btn" class="text-center">
-            <a class="btn btn-primary popup-modal" href="https://github.com/Kunzisoft/KeePassDX/wiki"><fa-icon [icon]="faQuestion"></fa-icon>Full <em>Wiki</em> on Github</a>
-        </div>
+        <markdown *ngIf="!isCollapsed" [src]="markdownUrl" ngPreserveWhitespaces></markdown>
     </div>
 </section>

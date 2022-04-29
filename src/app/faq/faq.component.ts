@@ -8,6 +8,7 @@ import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 })
 export class FaqComponent implements OnInit {
 
+  isCollapsed = true
   faQuestion = faQuestion
   wikiUrl = "https://github.com/Kunzisoft/KeePassDX/wiki"
   markdownUrl = "https://raw.githubusercontent.com/wiki/Kunzisoft/KeePassDX/FAQ.md"
