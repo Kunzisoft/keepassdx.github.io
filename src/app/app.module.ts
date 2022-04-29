@@ -16,6 +16,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SelectIconsComponent } from './select-icons/select-icons.component';
 import { FilterPipe } from './select-icons/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { CryptocurrencyDetailComponent } from './cryptocurrency-detail/cryptocurrency-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     FaqComponent,
     ContributionComponent,
     SelectIconsComponent,
-    FilterPipe
+    FilterPipe,
+    CryptocurrencyDetailComponent
   ],
   imports: [
     BrowserModule,

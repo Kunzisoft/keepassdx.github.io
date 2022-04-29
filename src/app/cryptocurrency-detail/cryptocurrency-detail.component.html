@@ -1,0 +1,29 @@
+<!-- Modal content -->
+<div *ngIf="cryptocurrency">
+    <fa-icon [icon]="cryptocurrency.icon"></fa-icon>{{ cryptocurrency.name }} ({{ cryptocurrency.currency }})
+
+    <ng-template #modalCryptoCurrency let-modal>
+        <div class="modal-header text-left">
+            <h4 class="modal-title"><a [href]="cryptocurrency.webSiteUrl"><fa-icon [icon]="cryptocurrency.icon"></fa-icon> {{ cryptocurrency.name }} ({{ cryptocurrency.currency }})</a></h4>
+            <a *ngIf="cryptocurrency.explorer.length > 0" class="btn btn-primary" [href]="cryptocurrency.explorer">Explorer</a>
+        </div>
+        <div class="modal-body text-center">
+            <div class="description">
+            <div>
+                <div class="cryptokey">
+                    <img src="{{ cryptocurrency.qrImgPath }}" alt="QR {{ cryptocurrency.name }}">
+                    <div class="copy" (click)="copyCurrencyToClipboard(cryptocurrency)" placement="bottom"
+                    ngbPopover="Address copied to the clipboard!">
+                        <span #address>{{ cryptocurrency.walletAddress }}</span>
+                        <br />
+                        <fa-icon [icon]="faCopy"></fa-icon>
+                    </div>
+                </div>
+            </div>
+            </div> 
+        </div>
+        <div class="modal-footer">
+            <button ngbAutofocus type="button" class="btn btn-outline-secondary" data-dismiss="modal" (click)="modal.dismiss()">Close</button>
+        </div>
+    </ng-template>
+</div>

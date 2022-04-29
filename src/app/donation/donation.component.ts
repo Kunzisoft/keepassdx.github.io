@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { faBitcoin, faEthereum, faGooglePlay, faMonero, faPaypal } from '@fortawesome/free-brands-svg-icons';
-import { faAtom, faCopy, faCoffee, faCertificate, faCreditCard, faInfinity, faMountain, faHeart, faCircle, faGlobeAfrica } from '@fortawesome/free-solid-svg-icons';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { faBitcoin, faEthereum, faGooglePlay, faMonero, faPaypal, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { faAtom, faCoffee, faCertificate, faCreditCard, faInfinity, faMountain, faHeart, faCircle, faGlobeAfrica } from '@fortawesome/free-solid-svg-icons';
+import { CryptocurrencyModalService } from '../cryptocurrency-modal.service';
 
 @Component({
   selector: 'app-donation',
   templateUrl: './donation.component.html',
   styleUrls: ['./donation.component.sass']
 })
+
 export class DonationComponent implements OnInit {
 
   faHeart = faHeart
@@ -23,10 +24,9 @@ export class DonationComponent implements OnInit {
   faMonero = faMonero
   faGooglePlay = faGooglePlay
   faPaypal = faPaypal
-  faCreditCard = faCreditCard
-  faCopy = faCopy
+  faCreditCard = faCreditCard;
 
-  cryptoCurrencies = [
+  mainCryptoCurrencies: CryptoCurrency[] = [
     {
       name: "Bitcoin",
       icon: this.faBitcoin,
@@ -48,23 +48,25 @@ export class DonationComponent implements OnInit {
       highlighted: true
     },
     {
-      name: "Cardano",
-      icon: this.faCardano,
-      currency: "ADA",
-      webSiteUrl: "https://cardano.org/",
-      qrImgPath: "assets/img/cardano_qr.png",
-      walletAddress: "addr1qxfuczz53wuwa4dqmluptakv2gnkgslqyhf73spq2vvkykcu0tkh8aw9ehfd8xfqdtp6vvz0nnz6xzkltzfxua5uv35qqzm4s0",
-      explorer: "https://explorer.cardano.org/en/address.html?address=addr1qxfuczz53wuwa4dqmluptakv2gnkgslqyhf73spq2vvkykcu0tkh8aw9ehfd8xfqdtp6vvz0nnz6xzkltzfxua5uv35qqzm4s0",
+      name: "Monero",
+      icon: this.faMonero,
+      currency: "XMR",
+      webSiteUrl: "https://getmonero.org/",
+      qrImgPath: "assets/img/monero_qr.png",
+      walletAddress: "4BFGwyshAa2YwwXNboQ4r78Vv9hf83cFBCF8vAd8jAQRbUQho187hKSLQpzWBsV7LW2gNXUthvb8W4hHBifTfhdSMKvTDP7",
+      explorer: "",
       highlighted: false
-    },
+    }
+  ];
+  altCryptoCurrencies: CryptoCurrency[] = [
     {
-      name: "Terra",
-      icon: this.faTerra,
-      currency: "LUNA",
-      webSiteUrl: "https://terra.money/",
-      qrImgPath: "assets/img/terra_qr.png",
-      walletAddress: "terra1zgsge0ph28kxwq9x8l3yu4t2kge9z3eyhwjan3",
-      explorer: "https://finder.terra.money/mainnet/address/terra1zgsge0ph28kxwq9x8l3yu4t2kge9z3eyhwjan3",
+      name: "Cosmos",
+      icon: this.faAtom,
+      currency: "ATOM",
+      webSiteUrl: "https://cosmos.network/",
+      qrImgPath: "assets/img/cosmos_qr.png",
+      walletAddress: "cosmos179txcprxcezldk2smcwj536kj27vuptqun574h",
+      explorer: "https://atomscan.com/accounts/cosmos179txcprxcezldk2smcwj536kj27vuptqun574h",
       highlighted: false
     },
     {
@@ -98,52 +100,45 @@ export class DonationComponent implements OnInit {
       highlighted: false
     },
     {
-      name: "Monero",
-      icon: this.faMonero,
-      currency: "XMR",
-      webSiteUrl: "https://getmonero.org/",
-      qrImgPath: "assets/img/monero_qr.png",
-      walletAddress: "4BFGwyshAa2YwwXNboQ4r78Vv9hf83cFBCF8vAd8jAQRbUQho187hKSLQpzWBsV7LW2gNXUthvb8W4hHBifTfhdSMKvTDP7",
-      explorer: "",
+      name: "Terra",
+      icon: this.faTerra,
+      currency: "LUNA",
+      webSiteUrl: "https://terra.money/",
+      qrImgPath: "assets/img/terra_qr.png",
+      walletAddress: "terra1zgsge0ph28kxwq9x8l3yu4t2kge9z3eyhwjan3",
+      explorer: "https://finder.terra.money/mainnet/address/terra1zgsge0ph28kxwq9x8l3yu4t2kge9z3eyhwjan3",
       highlighted: false
     },
     {
-      name: "Cosmos",
-      icon: this.faAtom,
-      currency: "ATOM",
-      webSiteUrl: "https://cosmos.network/",
-      qrImgPath: "assets/img/cosmos_qr.png",
-      walletAddress: "cosmos179txcprxcezldk2smcwj536kj27vuptqun574h",
-      explorer: "https://atomscan.com/accounts/cosmos179txcprxcezldk2smcwj536kj27vuptqun574h",
+      name: "Cardano",
+      icon: this.faCardano,
+      currency: "ADA",
+      webSiteUrl: "https://cardano.org/",
+      qrImgPath: "assets/img/cardano_qr.png",
+      walletAddress: "addr1qxfuczz53wuwa4dqmluptakv2gnkgslqyhf73spq2vvkykcu0tkh8aw9ehfd8xfqdtp6vvz0nnz6xzkltzfxua5uv35qqzm4s0",
+      explorer: "https://explorer.cardano.org/en/address.html?address=addr1qxfuczz53wuwa4dqmluptakv2gnkgslqyhf73spq2vvkykcu0tkh8aw9ehfd8xfqdtp6vvz0nnz6xzkltzfxua5uv35qqzm4s0",
       highlighted: false
     }
-  ]
+  ];
 
-  constructor(private modalService: NgbModal) {
-    
+  constructor(private cryptocurrencyModalService: CryptocurrencyModalService) {
   }
 
   ngOnInit(): void {
-  
   }
 
-  openCryptoCurrencyModal(content: any) {
-      this.modalService.open(content).result.then((res) => {
-      }, (res) => {
-    });
+  requestOpenCryptoCurrencyModal(cryptocurrency: CryptoCurrency) {
+      this.cryptocurrencyModalService.requestCryptocurrencyModal(cryptocurrency);
   }
+}
 
-  copyCurrencyToClipboard(content: any) {
-    navigator.clipboard.writeText(content.walletAddress).then(function() {
-      console.log('Async: Copying to clipboard was successful!');
-    }, function(err) {
-      console.error('Async: Could not copy text: ', err);
-    });
-    /*
-    textNode.select()
-    document.execCommand("copy");
-    textNode.remove()
-    */
-  }
-
+export interface CryptoCurrency {
+  name: string,
+  icon: IconDefinition,
+  currency: string,
+  webSiteUrl: string,
+  qrImgPath: string,
+  walletAddress: string,
+  explorer: string,
+  highlighted: boolean
 }

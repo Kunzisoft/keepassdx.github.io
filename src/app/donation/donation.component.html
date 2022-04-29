@@ -38,34 +38,19 @@
                         A new payment system and an entirely digital currency. <br />Thank you for believing in the future.
                     </p>
                     <div class="text-center btn-group-vertical btn-block" role="group" aria-label="cryptocurrencies">
-                        <div *ngFor="let item of cryptoCurrencies" class="btn" [ngClass]="{'btn-outline-secondary': !item.highlighted, 'btn-secondary': item.highlighted}" (click)="openCryptoCurrencyModal(modalCryptoCurrency)" title="Donate {{ item.name }}">
-                            <fa-icon [icon]="item.icon"></fa-icon>{{ item.name }} ({{ item.currency }})
+                        <div *ngFor="let item of mainCryptoCurrencies" class="btn" [ngClass]="{'btn-outline-secondary': !item.highlighted, 'btn-secondary': item.highlighted}" (click)="requestOpenCryptoCurrencyModal(item)" title="Donate {{ item.name }}">
+                            <app-cryptocurrency-detail [cryptocurrency]="item"></app-cryptocurrency-detail>
+                        </div>
 
-                            <!-- Modal content -->
-                            <ng-template #modalCryptoCurrency let-modal>
-                                <div class="modal-header text-left">
-                                    <h4 class="modal-title"><a [href]="item.webSiteUrl"><fa-icon [icon]="item.icon"></fa-icon> {{ item.name }} ({{ item.currency }})</a></h4>
-                                    <a *ngIf="item.explorer.length > 0" class="btn btn-primary" [href]="item.explorer">Explorer</a>
+                        <div ngbDropdown class="btn-block">
+                            <button class="btn btn-block btn-primary" id="btnGroupAltCrypto" type="button" ngbDropdownToggle>
+                              More
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="btnGroupAltCrypto" class="btn-block text-center">
+                                <div class="btn btn-block" *ngFor="let altItem of altCryptoCurrencies" (click)="requestOpenCryptoCurrencyModal(altItem)" ngbDropdownItem>
+                                    <app-cryptocurrency-detail [cryptocurrency]="altItem"></app-cryptocurrency-detail>
                                 </div>
-                                <div class="modal-body text-center">
-                                    <div class="description">
-                                    <div>
-                                        <div class="cryptokey">
-                                            <img src="{{ item.qrImgPath }}" alt="QR {{ item.name }}">
-                                            <div class="copy" (click)="copyCurrencyToClipboard(item)" placement="bottom"
-                                            ngbPopover="Address copied to the clipboard!">
-                                                <span #address>{{ item.walletAddress }}</span>
-                                                <br />
-                                                <fa-icon [icon]="faCopy"></fa-icon>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div> 
-                                </div>
-                                <div class="modal-footer">
-                                    <button ngbAutofocus type="button" class="btn btn-outline-secondary" data-dismiss="modal" (click)="modal.dismiss()">Close</button>
-                                </div>
-                            </ng-template>
+                            </div>
                         </div>
                     </div>
                 </div>
