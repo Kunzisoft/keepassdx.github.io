@@ -10,7 +10,7 @@ import { faDesktop, faLock } from '@fortawesome/free-solid-svg-icons';
 export class DescriptionComponent implements OnInit {
 
   title = "What is KeePassDX?"
-  summary = "KeePassDX is a free open source password manager for Android, which helps you to manage your passwords in a secure way."
+  summary = "KeePassDX is an ethical open source password manager for Android."
 
   descriptions = [
     {

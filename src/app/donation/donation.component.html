@@ -3,12 +3,12 @@
 
         <div class="section-title">
             <h2 class="card-title">Donation</h2>
-            <p>A small donation makes all the difference, KeePassDX is created on the basis of voluntaria. So you allow regular updates and you increase the motivation of developers.</p>
+            <p>A small donation makes all the difference, you increase the motivation to allow regular updates.</p>
         </div>
 
         <div class="row">
 
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                 <div class="tile">
                     <h3><fa-icon [icon]="faCoffee"></fa-icon>Tip</h3>
                     <p>A tip supports the work done and shows your interest in the project. <br />The bugs are eradicated thanks to you. </p>
@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                 <div class="tile tile-border-top">
                     <h3><fa-icon [icon]="faHeart"></fa-icon>Regular donations</h3>
                     <p>Regular donations are a very elegant way to get involved in the project. <br />You ensure the perenity of the code and the application.</p>
@@ -31,11 +31,11 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                 <div class="tile">
                     <h3><fa-icon [icon]="faBitcoin"></fa-icon>Crypto-currency</h3>
                     <p>
-                        A new payment system and an entirely digital currency. <br />Thank you for believing in the future.
+                        A new payment system and an entirely digital currency.
                     </p>
                     <div class="text-center btn-group-vertical btn-block" role="group" aria-label="cryptocurrencies">
                         <div *ngFor="let item of mainCryptoCurrencies" class="btn" [ngClass]="{'btn-outline-secondary': !item.highlighted, 'btn-secondary': item.highlighted}" (click)="requestOpenCryptoCurrencyModal(item)" title="Donate {{ item.name }}">
@@ -55,7 +55,7 @@
                     </div>
                 </div>
             </div>
-
+            
         </div>
     </div>
 </section>
