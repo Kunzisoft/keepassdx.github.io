@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import * as simpleIcons from 'simple-icons';
+import simpleIcons, { SimpleIcon } from 'simple-icons';
 
 @Component({
   selector: 'app-select-icons',
@@ -18,15 +18,15 @@ export class SelectIconsComponent implements OnInit {
   pngIconSize = 128
 
   constructor(private sanitizer: DomSanitizer) { 
-    for (const iconSlug in simpleIcons) {
-      const icon = simpleIcons.Get(iconSlug);
-      this.images.push(icon)
-    }
   }
 
   ngOnInit() {
     this.setPageSize()
     this.page = Math.random() * (this.images.length / this.pageSize)
+    for (const iconSlug in simpleIcons) {
+      const icon = simpleIcons.Get(iconSlug);
+      this.images.push(icon)
+    }
   }
 
   @HostListener('window:resize', ['$event'])
@@ -67,20 +67,22 @@ export class SelectIconsComponent implements OnInit {
   }
 
   showIcon(item: SimpleIcon): SafeResourceUrl {
-    this.addColorToSVG(item)
-    return this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/svg+xml, ${encodeURIComponent(item.svg)}`)
+    var newItem: SimpleIcon = Object.assign({}, item);
+    this.addColorToSVG(newItem)
+    return this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/svg+xml, ${encodeURIComponent(newItem.svg)}`)
   }
 
   downloadPNGIcon(item: SimpleIcon, size: number) {
-    this.addColorToSVG(item)
-    this.addWidthToSVG(item, size)
+    var newItem: SimpleIcon = Object.assign({}, item);
+    this.addColorToSVG(newItem)
+    this.addWidthToSVG(newItem, size)
     let canvas = document.createElement('canvas')
     let context = canvas.getContext('2d')
     canvas.width = size
     canvas.height = size
     let win = window.URL || window.webkitURL || window;
     let img = new Image();
-    let blob = new Blob([item.svg], { type: 'image/svg+xml' });
+    let blob = new Blob([newItem.svg], { type: 'image/svg+xml' });
     let url = win.createObjectURL(blob);
     img.onload = function () {
       context?.drawImage(img, 0, 0);
@@ -89,7 +91,7 @@ export class SelectIconsComponent implements OnInit {
       let a = document.createElement('a');
       document.body.appendChild(a);
       a.href = uri
-      a.download = item.title + '.png';
+      a.download = newItem.title + '.png';
       a.click();
       window.URL.revokeObjectURL(uri);
       document.body.removeChild(a);

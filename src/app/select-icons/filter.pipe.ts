@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { SimpleIcon } from 'simple-icons';
 
 @Pipe({ name: 'searchIconFilter' })
 export class FilterPipe implements PipeTransform {
