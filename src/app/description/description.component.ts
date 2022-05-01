@@ -16,12 +16,12 @@ export class DescriptionComponent implements OnInit {
     {
       icon: faLock,
       title: "Secure",
-      description: "Keep your password safe in a secure place, KeePassDX store your database locally in an encrypted file."
+      description: "Keep your password safe in a secure place, KeePassDX store your database in a single encrypted file and can be copied and moved wherever you want."
     },
     {
       icon: faDesktop,
       title: "Compatible",
-      description: "KeePassDX is compatible with other KeePass products, you can also export your data easily over all the devices."
+      description: "KeePassDX is compatible with other KeePass products, the format is standardized and allows for increased interoperability."
     },
     {
       icon: faGithub,
