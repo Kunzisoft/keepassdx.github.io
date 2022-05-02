@@ -60,7 +60,7 @@ export function markedOptionsFactory(): MarkedOptions {
   let itemIterator = 0
   let firstLevel2 = true
 
-  renderer.heading = (text: string, level, raw: string, slugger: marked.Slugger) => {
+  renderer.heading = (text: string, level, raw: string) => {
 
     itemIterator++
     let closeLast = ""
