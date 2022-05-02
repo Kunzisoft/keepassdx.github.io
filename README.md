@@ -35,7 +35,7 @@ Once the server is running it will poll changes from host and auto reload the pa
 Attach the container with
 
 ```
-docker-compose exec dev sh
+docker exec -it dev-keepassdx bash
 ```
 
 ## Copying node_modules
@@ -58,7 +58,7 @@ Connect to docker bash and launch angular build
 ```
 docker exec -it dev-keepassdx bash
 
-ng build --prod --base-href ./
+ng build --configuration production --base-href ./
 ```
 
 ### Get production files
