@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { faBitcoin, faEthereum, faGooglePlay, faMonero, faPaypal, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { faAtom, faCoffee, faCertificate, faCreditCard, faInfinity, faMountain, faHeart, faCircle, faGlobeAfrica, faChessKnight, faWallet } from '@fortawesome/free-solid-svg-icons';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CryptocurrencyModalService } from '../cryptocurrency-modal.service';
 import { Web3ConnectionService } from '../web3-connection.service';
 
@@ -12,6 +13,8 @@ import { Web3ConnectionService } from '../web3-connection.service';
 })
 
 export class DonationComponent implements OnInit {
+
+  @ViewChild("modalCryptoSendCallback") modalCryptoSendCallback!: ElementRef;
 
   faHeart = faHeart
   faCoffee = faCoffee
@@ -29,6 +32,10 @@ export class DonationComponent implements OnInit {
   faTreasure = faChessKnight
   faCreditCard = faCreditCard
   faWallet = faWallet
+
+  rewards = ["screen0.png", "screen1.png", "screen2.png", "screen3.png"];
+
+  lastTransactionHash: {cryptocurrency: CryptoCurrency, hash: string} | null = null;
 
   walletConnectedArray = new Map<CryptoCurrency, boolean>()
 
@@ -131,7 +138,8 @@ export class DonationComponent implements OnInit {
   ];
 
   constructor(private cryptocurrencyModalService: CryptocurrencyModalService,
-              private web3ConnectionService: Web3ConnectionService) {
+              private web3ConnectionService: Web3ConnectionService,
+              private ngbModalService: NgbModal) {
   }
 
   ngOnInit(): void {
@@ -172,11 +180,12 @@ export class DonationComponent implements OnInit {
         this.web3ConnectionService.sendEth(
           this.mainCryptoCurrencies[1].walletAddress,
           Number(form.value.amount),
-          function(err: any, transactionHash: any) {
+          (err: any, transactionHash: any) => {
             if (err) { 
-              showTransactionError()
+              this.lastTransactionHash = null
             } else {
-              showTransactionSuccess(transactionHash)
+              this.lastTransactionHash = {cryptocurrency: cryptocurrency, hash: transactionHash}
+              this.ngbModalService.open(this.modalCryptoSendCallback)
             }
           }
         )
@@ -185,14 +194,6 @@ export class DonationComponent implements OnInit {
       // TODO Other web3 wallet connection
     }
   }
-}
-
-function showTransactionError() {
-  // TODO show error
-}
-
-function showTransactionSuccess(transactionHash: string) {
-  // TODO show success
 }
 
 export interface CryptoCurrency {

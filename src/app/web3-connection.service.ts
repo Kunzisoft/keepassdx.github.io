@@ -25,52 +25,71 @@ export class Web3ConnectionService {
   async connectETHAccount() {
     // EIP-1102 : https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1102.md
     // EIP-1193 : https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1193.md
+    // EIP-3326 : https://github.com/ethereum/EIPs/blob/master/EIPS/eip-3326.md
     if (window.ethereum != null) {
       try {
         await window.ethereum.request({method: 'eth_requestAccounts'});
         window.web3 = new Web3(window.ethereum)
-        console.log("Connected to ETH wallet")
-        return true
+        // 0x1 is ethereum
+        if (window.ethereum.chainId != '0x1') {
+          try {
+            await window.ethereum.request({
+              method: 'wallet_switchEthereumChain',
+              params: [{ chainId: '0x1'}],
+            });
+            console.log("You have switched to Ethereum network")
+            return true
+          } catch (switchError) {
+            console.log("Cannot switch to the network: " + switchError)
+            return false
+          }
+        } else {
+          console.log("Connected to ETH wallet")
+          return true
+        }
       } catch (error) {
-        console.log("Not connected")
+        console.log("Not connected: " + error)
       }
     }
-      return false
-    // this.accountStatusSource.next(this.accounts)
-    // web3.eth.getBalance(address [, defaultBlock] [, callback])
+    return false
   }
 
   sendEth(destination: string,
           amount: number,
           callback: TransactionCallback) {
 
-    window.web3.eth.getAccounts().then( (accounts: string[]) => {
+    // Verify connection and network
+    this.connectETHAccount().then(connected => {
+      window.web3.eth.getAccounts().then( (accounts: string[]) => {
 
-      let mainAccount = accounts[0]
-      if (mainAccount != null) {
         // Main account exists
-        window.web3.eth.sendTransaction({
-          from: accounts[0],
-          to: destination,
-          value: Web3.utils.toWei(amount.toString(), "ether") 
-        }, function(err: any, transactionHash: any) {
-          if (err) { 
-              console.log("Transaction not successful") 
-          } else {
-              console.log("Transaction successful : Hash -> " + transactionHash)
-          }
-          callback(err, transactionHash)
-        })
-      } else {
-        // Try a reconnection
-        this.connectETHAccount().then(connected => {
-            if (connected) {
-              this.sendEth(destination, amount, callback)
-            }
-          }
-        )
-      }
+        let mainAccount = accounts[0]
+        if (mainAccount != null) {
 
+          // Make the donation
+          window.web3.eth.sendTransaction({
+            from: accounts[0],
+            to: destination,
+            value: Web3.utils.toWei(amount.toString(), "ether") 
+          }, function(err: any, transactionHash: any) {
+            if (err) { 
+                console.log("Transaction not successful") 
+            } else {
+                console.log("Transaction successful : Hash -> " + transactionHash)
+            }
+            callback(err, transactionHash)
+          })
+        } else {
+          // Try a reconnection
+          this.connectETHAccount().then(connected => {
+              if (connected) {
+                this.sendEth(destination, amount, callback)
+              }
+            }
+          )
+        }
+
+      })
     })
   }
 

@@ -57,6 +57,23 @@
                                         </div>
                                     </div>
                                 </form>
+
+                                <ng-template #modalCryptoSendCallback let-modal>
+                                    <div class="modal-header">
+                                      <h4 class="modal-title" id="modal-basic-title">Thank you for your donation!</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p>Look at the <i>Rewards</i> section to see how to unlock the <em>Pro version</em> of KeePassDX.</p>
+                                      <p>
+                                        <ngb-alert [dismissible]="false" type="info">
+                                            Txs : <i>{{ lastTransactionHash?.hash }}</i>
+                                        </ngb-alert>
+                                      </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button ngbAutofocus type="button" class="btn btn-outline-secondary" data-dismiss="modal" (click)="modal.dismiss()">Close</button>
+                                    </div>
+                                </ng-template>
                             </ng-template>
                             <app-cryptocurrency-detail [cryptocurrency]="item"></app-cryptocurrency-detail>
                         </div>
@@ -79,17 +96,20 @@
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
                 <div id="tile-rewards" class="tile tile-border-top">
                     <h3><fa-icon [icon]="faTreasure"></fa-icon>Rewards</h3>
-                    <form class="form-inline col-auto justify-content-center">
-                        <div class="form-group">
-                            <label for="issueNumber">Issue</label>
-                            <input type="number" min="1" step="1" class="form-control" id="issueNumber" placeholder="optionnal">
-                        </div>
-                        <div class="form-group">
-                            <label for="ethereumAmount">ETH</label>
-                            <input type="number" value="0.01" min="0" step="0.01" class="currency form-control form-control-lg" id="ethereumAmount" placeholder="0.01">
-                            <button type="submit" class="btn btn-lg btn-primary">Mint</button>
-                        </div>
-                    </form>
+                    <ngb-alert *ngIf="lastTransactionHash" [dismissible]="false" type="info">
+                        Transaction : <i>{{ lastTransactionHash.hash }}</i>
+                    </ngb-alert>
+                    <p>With your contribution to the project, you can unlock cosmetic content.</p>
+
+                    <ngb-carousel id="reward-carousel" #carousel [interval]="3000" [pauseOnHover]="true" [pauseOnFocus]="true">
+                        <ng-template ngbSlide *ngFor="let img of rewards; index as i">
+                            <div class="reward-img-wrapper">
+                                <img class="img-fluid d-block mx-auto" src="assets/img/{{img}}" alt="Reward {{i}}">
+                            </div>
+                        </ng-template>
+                    </ngb-carousel>
+
+                    <p><small>If you have already contributed but have not received a message, you can request your reward by sending an email indicating the type of contribution, your nickname and the transaction number.</small></p>
                 </div>
             </div>
         </div>
