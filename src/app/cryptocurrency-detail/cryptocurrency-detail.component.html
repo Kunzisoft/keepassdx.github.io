@@ -1,7 +1,5 @@
 <!-- Modal content -->
 <div *ngIf="cryptocurrency">
-    <fa-icon [icon]="cryptocurrency.icon"></fa-icon>{{ cryptocurrency.name }} ({{ cryptocurrency.currency }})
-
     <ng-template #modalCryptoCurrency let-modal>
         <div class="modal-header text-left">
             <h4 class="modal-title"><a [href]="cryptocurrency.webSiteUrl"><fa-icon [icon]="cryptocurrency.icon"></fa-icon> {{ cryptocurrency.name }} ({{ cryptocurrency.currency }})</a></h4>

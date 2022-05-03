@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { faBitcoin, faEthereum, faGooglePlay, faMonero, faPaypal, IconDefinition } from '@fortawesome/free-brands-svg-icons';
-import { faAtom, faCoffee, faCertificate, faCreditCard, faInfinity, faMountain, faHeart, faCircle, faGlobeAfrica } from '@fortawesome/free-solid-svg-icons';
+import { faAtom, faCoffee, faCertificate, faCreditCard, faInfinity, faMountain, faHeart, faCircle, faGlobeAfrica, faChessKnight, faWallet } from '@fortawesome/free-solid-svg-icons';
 import { CryptocurrencyModalService } from '../cryptocurrency-modal.service';
+import { Web3ConnectionService } from '../web3-connection.service';
 
 @Component({
   selector: 'app-donation',
@@ -24,9 +26,13 @@ export class DonationComponent implements OnInit {
   faMonero = faMonero
   faGooglePlay = faGooglePlay
   faPaypal = faPaypal
-  faCreditCard = faCreditCard;
+  faTreasure = faChessKnight
+  faCreditCard = faCreditCard
+  faWallet = faWallet
 
-  mainCryptoCurrencies: CryptoCurrency[] = [
+  walletConnectedArray = new Map<CryptoCurrency, boolean>()
+
+  mainCryptoCurrencies: MainCryptoCurrency[] = [
     {
       name: "Bitcoin",
       icon: this.faBitcoin,
@@ -35,7 +41,8 @@ export class DonationComponent implements OnInit {
       qrImgPath: "assets/img/bitcoin_qr.png",
       walletAddress: "1DSwXCk7Sob24sNsofywNoRQw2f5Qj5t2F",
       explorer: "https://blockstream.info/address/1DSwXCk7Sob24sNsofywNoRQw2f5Qj5t2F",
-      highlighted: false
+      highlighted: false,
+      defaultValue: 0.002
     },
     {
       name: "Ethereum",
@@ -45,7 +52,8 @@ export class DonationComponent implements OnInit {
       qrImgPath: "assets/img/ethereum_qr.png",
       walletAddress: "0x6F5De8c22C4869c4a5D3a48975a42C9498de3CAB",
       explorer: "https://etherchain.org/account/6F5De8c22C4869c4a5D3a48975a42C9498de3CAB",
-      highlighted: true
+      highlighted: true,
+      defaultValue: 0.02
     },
     {
       name: "Monero",
@@ -55,7 +63,8 @@ export class DonationComponent implements OnInit {
       qrImgPath: "assets/img/monero_qr.png",
       walletAddress: "4BFGwyshAa2YwwXNboQ4r78Vv9hf83cFBCF8vAd8jAQRbUQho187hKSLQpzWBsV7LW2gNXUthvb8W4hHBifTfhdSMKvTDP7",
       explorer: "",
-      highlighted: false
+      highlighted: false,
+      defaultValue: 0.2
     }
   ];
   altCryptoCurrencies: CryptoCurrency[] = [
@@ -121,15 +130,69 @@ export class DonationComponent implements OnInit {
     }
   ];
 
-  constructor(private cryptocurrencyModalService: CryptocurrencyModalService) {
+  constructor(private cryptocurrencyModalService: CryptocurrencyModalService,
+              private web3ConnectionService: Web3ConnectionService) {
   }
 
   ngOnInit(): void {
   }
 
   requestOpenCryptoCurrencyModal(cryptocurrency: CryptoCurrency) {
-      this.cryptocurrencyModalService.requestCryptocurrencyModal(cryptocurrency);
+    this.cryptocurrencyModalService.requestCryptocurrencyModal(cryptocurrency);
   }
+
+  walletConnected(cryptocurrency: CryptoCurrency) {
+    return this.walletConnectedArray.get(cryptocurrency)
+  }
+
+  walletAvailable(cryptocurrency: CryptoCurrency) {
+    switch(cryptocurrency.name) {
+      case "Ethereum": {
+        return this.web3ConnectionService.isETHAccountAvailable()
+      }
+    }
+    return false;
+  }
+
+  connectWallet(cryptocurrency: CryptoCurrency) {
+    switch(cryptocurrency.name) {
+      case "Ethereum": {
+        this.web3ConnectionService.connectETHAccount().then( connected => 
+          this.walletConnectedArray.set(cryptocurrency, connected)
+        );
+        break;
+      }
+      // TODO Other web3 wallet connection
+    }
+  }
+
+  send(cryptocurrency: CryptoCurrency, form: NgForm) {
+    switch(cryptocurrency.name) {
+      case "Ethereum": {
+        this.web3ConnectionService.sendEth(
+          this.mainCryptoCurrencies[1].walletAddress,
+          Number(form.value.amount),
+          function(err: any, transactionHash: any) {
+            if (err) { 
+              showTransactionError()
+            } else {
+              showTransactionSuccess(transactionHash)
+            }
+          }
+        )
+        break;
+      }
+      // TODO Other web3 wallet connection
+    }
+  }
+}
+
+function showTransactionError() {
+  // TODO show error
+}
+
+function showTransactionSuccess(transactionHash: string) {
+  // TODO show success
 }
 
 export interface CryptoCurrency {
@@ -141,4 +204,8 @@ export interface CryptoCurrency {
   walletAddress: string,
   explorer: string,
   highlighted: boolean
+}
+
+export interface MainCryptoCurrency extends CryptoCurrency {
+  defaultValue: number | undefined
 }

@@ -20,9 +20,22 @@
       "es2018",
       "dom"
     ],
-    "typeRoots": ["../../node_modules/@types"]
+    "typeRoots": ["../../node_modules/@types"],
+    "paths": {
+      "crypto": ["./node_modules/crypto-browserify"],
+      "stream": ["./node_modules/stream-browserify"],
+      "assert": ["./node_modules/assert"],
+      "http": ["./node_modules/stream-http"],
+      "https": ["./node_modules/https-browserify"],
+      "process": ["./node_modules/process/browser"],
+      "url": ["./node_modules/url"],
+      "os": ["./node_modules/os-browserify"],
+      "eth-provider": ["./node_modules/eth-provider"]
+    }
   },
   "angularCompilerOptions": {
+    "types" : ["node"],
+    "allowSyntheticDefaultImports": true,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
