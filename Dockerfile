@@ -1,7 +1,7 @@
-FROM node:lts
+FROM node:16.19.0
 
 # Install global npm packages
-RUN npm i -g @angular/cli@13.0.0
+RUN npm i -g @angular/cli@15.0.0
 
 # Set working directory
 WORKDIR /usr/src/app

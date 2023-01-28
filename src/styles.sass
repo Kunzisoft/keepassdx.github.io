@@ -1,7 +1,7 @@
 @import 'variables'
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap'
+@import "../node_modules/bootstrap/scss/bootstrap"
 
 html
     scroll-behavior: smooth
@@ -11,6 +11,13 @@ body
 
 .btn fa-icon
     margin-right: 8px
+
+/* Force color on button */
+.btn:hover, .btn-primary, .btn-primary:hover, .btn-secondary, .btn-secondary:hover
+    color: #fff
+
+.dropdown-item:hover, .dropdown-item:focus
+  color: $secondary
 
 h1, h2, h3, h4, h5, h6
     color: $secondary
@@ -61,12 +68,16 @@ section li:before
     border-radius: 8px
     padding: 32px 32px
     transition: all ease-in-out 0.4s
-    background: #ffffff
-    color: #364c37
+    background: $body-bg
+    color: $body-color
     margin: 8px
     margin-top: 12px
     margin-bottom: 12px
     text-align: center
+
+.tile .btn-group-vertical
+    word-wrap: break-word
+    width: 100%
 
 .tile-border-top
     border-top: 4px solid $primary

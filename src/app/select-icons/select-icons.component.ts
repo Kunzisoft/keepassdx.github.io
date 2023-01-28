@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import simpleIcons, { SimpleIcon } from 'simple-icons';
+import { SimpleIcon } from 'simple-icons';
+import * as icons from 'simple-icons';
 
 @Component({
   selector: 'app-select-icons',
@@ -23,10 +24,9 @@ export class SelectIconsComponent implements OnInit {
   ngOnInit() {
     this.setPageSize()
     this.page = Math.random() * (this.images.length / this.pageSize)
-    for (const iconSlug in simpleIcons) {
-      const icon = simpleIcons.Get(iconSlug);
-      this.images.push(icon)
-    }
+      Object.values(icons).map((value) => {
+        this.images.push(value)
+      })
   }
 
   @HostListener('window:resize', ['$event'])
