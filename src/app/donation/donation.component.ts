@@ -114,26 +114,6 @@ export class DonationComponent implements OnInit {
       walletAddress: "0x6F5De8c22C4869c4a5D3a48975a42C9498de3CAB",
       explorer: "https://polygonscan.com/address/0x6F5De8c22C4869c4a5D3a48975a42C9498de3CAB",
       highlighted: false
-    },
-    {
-      name: "Terra",
-      icon: this.faTerra,
-      currency: "LUNA",
-      webSiteUrl: "https://terra.money/",
-      qrImgPath: "assets/img/terra_qr.png",
-      walletAddress: "terra1zgsge0ph28kxwq9x8l3yu4t2kge9z3eyhwjan3",
-      explorer: "https://finder.terra.money/mainnet/address/terra1zgsge0ph28kxwq9x8l3yu4t2kge9z3eyhwjan3",
-      highlighted: false
-    },
-    {
-      name: "Cardano",
-      icon: this.faCardano,
-      currency: "ADA",
-      webSiteUrl: "https://cardano.org/",
-      qrImgPath: "assets/img/cardano_qr.png",
-      walletAddress: "addr1qxfuczz53wuwa4dqmluptakv2gnkgslqyhf73spq2vvkykcu0tkh8aw9ehfd8xfqdtp6vvz0nnz6xzkltzfxua5uv35qqzm4s0",
-      explorer: "https://explorer.cardano.org/en/address.html?address=addr1qxfuczz53wuwa4dqmluptakv2gnkgslqyhf73spq2vvkykcu0tkh8aw9ehfd8xfqdtp6vvz0nnz6xzkltzfxua5uv35qqzm4s0",
-      highlighted: false
     }
   ];
 

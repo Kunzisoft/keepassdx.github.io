@@ -52,7 +52,7 @@
                                         <button *ngIf="walletConnected(item)" type="submit" class="btn" [ngClass]="{'btn-outline-secondary': !item.highlighted, 'btn-secondary': item.highlighted}" (click)="send(item, cryptoSendForm)">
                                             Send {{ item.currency }} <fa-icon [icon]="item.icon"></fa-icon>
                                         </button>
-                                        <div class="btn" [ngClass]="{'btn-outline-secondary': !item.highlighted, 'btn-secondary': item.highlighted}" (click)="requestOpenCryptoCurrencyModal(item)">
+                                        <div class="btn" [ngClass]="{'btn-outline-primary': !item.highlighted, 'btn-primary': item.highlighted}" (click)="requestOpenCryptoCurrencyModal(item)">
                                             +
                                         </div>
                                     </div>
