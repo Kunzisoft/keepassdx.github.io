@@ -53,22 +53,36 @@
                                             Send {{ item.currency }} <fa-icon [icon]="item.icon"></fa-icon>
                                         </button>
                                         <div class="btn" [ngClass]="{'btn-outline-primary': !item.highlighted, 'btn-primary': item.highlighted}" (click)="requestOpenCryptoCurrencyModal(item)">
-                                            +
+                                            <fa-icon [icon]="faQrcode"></fa-icon>
                                         </div>
                                     </div>
                                 </form>
 
                                 <ng-template #modalCryptoSendCallback let-modal>
                                     <div class="modal-header">
-                                      <h4 class="modal-title" id="modal-basic-title">Thank you for your donation!</h4>
+                                        <h5 class="modal-title" id="modal-basic-title">Thank you for your donation!</h5>
                                     </div>
                                     <div class="modal-body">
-                                      <p>Look at the <i>Rewards</i> section to see how to unlock the <em>Pro version</em> of KeePassDX.</p>
-                                      <p>
-                                        <ngb-alert [dismissible]="false" type="info">
-                                            Txs : <i>{{ lastTransactionHash?.hash }}</i>
-                                        </ngb-alert>
-                                      </p>
+                                        <p><i>Warning, this message will self-destruct if you leave this page.</i></p>
+                                        <p>Your contribution will be useful to fix bugs and to release the new version of KeePassDX.</p>
+                                        <p>To thank you, here is the procedure <strong>to unlock the Pro version of <i>KeePassDX</i> on F-Droid</strong> : </p>
+                                        <ol>
+                                            <li>Open the KeePassDX App</li>
+                                            <li>Open Settings by clicking the Setting-Icon</li>
+                                            <li>Open Appearance and scroll down to the last setting-point "Reset educational screens"</li>
+                                            <li>Press it exactly 10 times. <i>(Pressing 11 times and you have to stop the app and restart the procedure.)</i></li>
+                                            <li>Go back </li>
+                                            <li>Reopen appearance settings</li>
+                                            <li>"Select a theme"</li>
+                                            <li>Voilà !</li>
+                                        </ol>
+                                        <a class="btn btn-block btn-primary" href="https://f-droid.org/en/packages/com.kunzisoft.keepass.libre/">KeePassDX (Libre)</a>
+                                        <p>
+                                            <ngb-alert [dismissible]="false" type="primary">
+                                                <a href="https://beaconcha.in/tx/{{ lastTransactionHash?.hash }}">Txs : <i>{{ lastTransactionHash?.hash }}</i></a>
+                                                <p><small>Your transaction number may be useful in the future!</small></p>
+                                            </ngb-alert>
+                                        </p>
                                     </div>
                                     <div class="modal-footer">
                                         <button ngbAutofocus type="button" class="btn btn-outline-secondary" data-dismiss="modal" (click)="modal.dismiss()">Close</button>
@@ -93,13 +107,14 @@
                 </div>
             </div>
 
+            <!--
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
                 <div id="tile-rewards" class="tile tile-border-top">
                     <h3><fa-icon [icon]="faTreasure"></fa-icon>Rewards</h3>
                     <ngb-alert *ngIf="lastTransactionHash" [dismissible]="false" type="info">
                         Transaction : <i>{{ lastTransactionHash.hash }}</i>
                     </ngb-alert>
-                    <p>With your contribution to the project, you can unlock cosmetic content.</p>
+                    <p>With your Eth contribution to the project, you can unlock one of these NFTs :</p>
 
                     <ngb-carousel id="reward-carousel" #carousel [interval]="3000" [pauseOnHover]="true" [pauseOnFocus]="true">
                         <ng-template ngbSlide *ngFor="let img of rewards; index as i">
@@ -108,10 +123,9 @@
                             </div>
                         </ng-template>
                     </ngb-carousel>
-
-                    <p><small>If you have already contributed but have not received a message, you can request your reward by sending an email indicating the type of contribution, your nickname and the transaction number.</small></p>
                 </div>
             </div>
+            -->
         </div>
     </div>
 </section>

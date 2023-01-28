@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { faBitcoin, faEthereum, faGooglePlay, faMonero, faPaypal, IconDefinition } from '@fortawesome/free-brands-svg-icons';
-import { faAtom, faCoffee, faCertificate, faCreditCard, faInfinity, faMountain, faHeart, faCircle, faGlobeAfrica, faChessKnight, faWallet } from '@fortawesome/free-solid-svg-icons';
+import { faAtom, faCoffee, faCertificate, faCreditCard, faInfinity, faMountain, faHeart, faQrcode, faCircle, faGlobeAfrica, faChessKnight, faWallet } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CryptocurrencyModalService } from '../cryptocurrency-modal.service';
 import { Web3ConnectionService } from '../web3-connection.service';
@@ -32,8 +32,9 @@ export class DonationComponent implements OnInit {
   faTreasure = faChessKnight
   faCreditCard = faCreditCard
   faWallet = faWallet
+  faQrcode = faQrcode
 
-  rewards = ["screen0.png", "screen1.png", "screen2.png", "screen3.png"];
+  rewards = ["NFT0.png", "NFT1.png", "NFT2.png", "NFT3.png"];
 
   lastTransactionHash: {cryptocurrency: CryptoCurrency, hash: string} | null = null;
 
