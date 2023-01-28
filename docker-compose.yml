@@ -1,4 +1,4 @@
-version: "3"
+version: "3.2"
 services:
   dev:
     container_name: dev-keepassdx
@@ -15,4 +15,5 @@ services:
       - ./tsconfig.json:/usr/src/app/tsconfig.json
       - ./tslint.json:/usr/src/app/tslint.json
       - ./package.json:/usr/src/app/package.json
+      - ./node_modules:/usr/src/app/node_modules/
     entrypoint: ng serve --host 0.0.0.0 --poll 1

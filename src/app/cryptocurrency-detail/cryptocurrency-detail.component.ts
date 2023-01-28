@@ -30,10 +30,7 @@ export class CryptocurrencyDetailComponent implements OnInit {
   }
 
   openCryptoCurrencyModal(content: ElementRef) {
-    this.modalService.open(content).result.then(
-        (res) => {},
-        (res) => {}
-      );
+    this.modalService.open(content, { });
   }
 
   copyCurrencyToClipboard(content: CryptoCurrency) {
